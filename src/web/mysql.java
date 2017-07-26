@@ -1,5 +1,8 @@
 package web;
 
+import com.sun.javaws.exceptions.ExitException;
+
+import javax.xml.stream.events.Comment;
 import java.sql.*;
 
 public class mysql
@@ -8,31 +11,15 @@ public class mysql
     static final String db_url="jdbc:mysql://192.168.99.100:3306/mysql";
     static final String user="root";
     static final String password="zjcx1997";
-    public static void main(String[] args)
+    private Connection conn=null;
+    private Statement stmt=null;
+    private ResultSet rs=null;
+    public mysql()
     {
-        Connection conn=null;
-        Statement stmt=null;
         try
         {
             Class.forName(db_drive);   //加载数据库驱动
             conn=DriverManager.getConnection(db_url,user,password);  //建立数据库连接
-            stmt=conn.createStatement();  //实例化Statement对像,由当前数据库连接生成一个数据操作对象
-            String sql;                   //存放sql语句
-            sql="SELECT id,name FROM test";
-            ResultSet rs=stmt.executeQuery(sql);
-            while(rs.next())
-            {
-                int id  = rs.getInt("id");
-                String name = rs.getString("name");
-                System.out.print("ID: " + id);
-                System.out.print("  学生名字: " + name);
-                System.out.print("\n");
-            }
-            // 完成后关闭
-            rs.close();
-            stmt.close();
-            conn.close();
-
         }
         catch (SQLException se)
         {
@@ -42,24 +29,63 @@ public class mysql
         {
             e.printStackTrace();
         }
-        finally
+    }
+
+    private void close()
+    {
+        try
         {
-            try
-            {
-                if(stmt!=null) stmt.close();
-            }
-            catch(SQLException se)
-            {
-            }
-            try
-            {
-                if(conn!=null) conn.close();
-            }
-            catch(SQLException se)
-            {
-                se.printStackTrace();
-            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
         }
     }
+
+    public String checkuser(String username,String password)
+    {
+
+        try{
+            stmt=conn.createStatement();
+            rs=stmt.executeQuery("SELECT username,password FROM  sun_login");
+            while (rs.next())
+            {
+                String exist_username = rs.getString("username");
+                String exist_password = rs.getString("password");
+                if (username.equals(exist_username))
+                {
+                    if (password.equals(exist_password))
+                    {
+                        close();
+                        return "AllCorrect";
+                    }
+                    close();
+                    return "PasswordIsWrong";
+                }
+            }
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+        close();
+        return "UsernameIsWrong";
+    }
+
+    /*private void closeconn()
+    {
+        try
+        {
+            if(conn!=null) conn.close();
+        }
+        catch(SQLException se)
+        {
+            se.printStackTrace();
+        }
+    }*/
+
 }
 
