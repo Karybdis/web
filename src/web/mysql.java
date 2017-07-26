@@ -12,23 +12,20 @@ public class mysql
     {
         Connection conn=null;
         Statement stmt=null;
-        try{
+        try
+        {
             Class.forName(db_drive);   //加载数据库驱动
-
-            System.out.println("连接数据库");
             conn=DriverManager.getConnection(db_url,user,password);  //建立数据库连接
-
             stmt=conn.createStatement();  //实例化Statement对像,由当前数据库连接生成一个数据操作对象
-            String sql;
+            String sql;                   //存放sql语句
             sql="SELECT id,name FROM test";
             ResultSet rs=stmt.executeQuery(sql);
-            while(rs.next()){
-
+            while(rs.next())
+            {
                 int id  = rs.getInt("id");
                 String name = rs.getString("name");
-
                 System.out.print("ID: " + id);
-                System.out.print(", 学生名字: " + name);
+                System.out.print("  学生名字: " + name);
                 System.out.print("\n");
             }
             // 完成后关闭
@@ -51,10 +48,11 @@ public class mysql
             {
                 if(stmt!=null) stmt.close();
             }
-            catch(SQLException se2)
+            catch(SQLException se)
             {
             }
-            try{
+            try
+            {
                 if(conn!=null) conn.close();
             }
             catch(SQLException se)
@@ -62,7 +60,6 @@ public class mysql
                 se.printStackTrace();
             }
         }
-        System.out.println("Goodbye!");
     }
 }
 
