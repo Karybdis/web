@@ -13,6 +13,7 @@ public class mysql
     static final String password="zjcx1997";
     private Connection conn=null;
     private Statement stmt=null;
+    private PreparedStatement pstmt=null;
     private ResultSet rs=null;
     public mysql()
     {
@@ -73,6 +74,23 @@ public class mysql
         }
         close();
         return "UsernameIsWrong";
+    }
+
+    public void adduser(String username,String password)
+    {
+      String sql;
+      sql="INSERT INTO sun_login VALUE (?,?)";
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,username);
+            pstmt.setString(2,password);
+            pstmt.executeUpdate();
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
     }
 
     /*private void closeconn()

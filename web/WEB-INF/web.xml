@@ -11,4 +11,15 @@
         <servlet-name>loginservlet</servlet-name>
         <url-pattern>/loginservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>signupservlet</servlet-name>
+        <servlet-class>web.SignUpservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>signupservlet</servlet-name>
+        <url-pattern>/signupservlet</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

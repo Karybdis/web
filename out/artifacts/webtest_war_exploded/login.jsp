@@ -32,7 +32,7 @@
         <tr align=center><td>密 码</td><td><input type="password" name="password" id="password"></td></tr>
         <tr align=center>
             <td colspan="2">
-                <input type="button" value="注册"/>
+                <input type="button" value="注册" onclick="window.location.href('sign_up.jsp')" />
                 <input type="submit" value="登 录" onclick="r();"/>
                 <input type="reset" value="忘记密码"/>
             </td></tr>
