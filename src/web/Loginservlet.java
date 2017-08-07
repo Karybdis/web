@@ -18,12 +18,16 @@ public class Loginservlet extends HttpServlet
     {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
+        String who=request.getParameter("who");
         mysql my=new mysql();
-        String result=my.checkuser(username,password);
+        String result=my.checkuser(username,password,who);
         if (result.equals("AllCorrect"))
         {
+           request.getSession().setAttribute("username",username);
+            request.getSession().setAttribute("who",who);
             System.out.println("登录成功");
-            response.sendRedirect("successtest.jsp");
+            response.sendRedirect("home.jsp");
+          // request.getRequestDispatcher("index.jsp").forward(request,response);
         }
         else if (result.equals("PasswordIsWrong"))
         {
@@ -33,7 +37,7 @@ public class Loginservlet extends HttpServlet
         {
             System.out.println("没有该用户");
         }
-    //  request.getRequestDispatcher("login.html").forward(request,response);
+    //
     }
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException

@@ -11,6 +11,7 @@
   <title>$Title$</title>
 </head>
 <body>
-$END$
+ 欢迎 <%=(String)request.getSession().getAttribute("username")%>
+<br/>
 </body>
 </html>

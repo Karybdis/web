@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" build-on-make="true" name="webtest:war exploded">
+  <artifact type="war" build-on-make="true" name="webtest:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/webtest_war_exploded</output-path>
-    <root id="root">
+    <root id="archive" name="webtest_war exploded.war">
       <element id="javaee-facet-resources" facet="webtest/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

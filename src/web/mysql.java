@@ -8,9 +8,11 @@ import java.sql.*;
 public class mysql
 {
     static final String  db_drive="com.mysql.jdbc.Driver";
-    static final String db_url="jdbc:mysql://192.168.99.100:3306/mysql";
+   static final String db_url="jdbc:mysql://106.14.223.207:3306/mysql";
+   //static final String db_url="jdbc:mysql://192.168.99.100:3306/mysql";
     static final String user="root";
-    static final String password="zjcx1997";
+
+   // static final String password="zjcx1997";
     private Connection conn=null;
     private Statement stmt=null;
     private PreparedStatement pstmt=null;
@@ -32,7 +34,7 @@ public class mysql
         }
     }
 
-   private void close()
+    private void close()
     {
         try
         {
@@ -46,12 +48,13 @@ public class mysql
         }
     }
 
-    public String checkuser(String username,String password)
+    public String checkuser(String username,String password,String who)
     {
 
         try{
             stmt=conn.createStatement();
-            rs=stmt.executeQuery("SELECT username,password FROM  sun_login");
+           if (who.equals("0")) rs=stmt.executeQuery("SELECT username,password FROM  sun_login");
+           else rs=stmt.executeQuery("SELECT username,password FROM  admin_login");
             while (rs.next())
             {
                 String exist_username = rs.getString("username");
@@ -78,8 +81,8 @@ public class mysql
 
     public void adduser(String username,String password)
     {
-      String sql;
-      sql="INSERT INTO sun_login VALUE (?,?)";
+        String sql;
+        sql="INSERT INTO sun_login VALUE (?,?)";
         try
         {
             pstmt=conn.prepareStatement(sql);
