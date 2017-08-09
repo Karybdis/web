@@ -34,7 +34,7 @@
         </div>
         <div>
             <ul class="nav navbar-nav">
-                <li ><a >主页</a></li>
+                <li ><a href="home.jsp">主页</a></li>
                 <% String a=(String)request.getSession().getAttribute("username");
                     if (a==null) { %>
                 <li ><a href="login.jsp" >登录</a></li>
@@ -109,5 +109,6 @@
     <button type="submit" class="btn btn-default">提交</button>
 </form>
 <% } %>
+<p>管理员 admin 123</p>
 </body>
 </html>

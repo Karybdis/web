@@ -32,7 +32,7 @@
         <tr align=center><td>密 码</td><td><input type="password" name="password" id="password" ></td></tr>
         <tr align="center">
             <td colspan="2">
-            <input type="radio" name="who" value="0"> 用户
+            <input type="radio" name="who" value="0" checked> 用户
             <input type="radio" name="who" value="1"> 管理员
             </td>
         </tr>
