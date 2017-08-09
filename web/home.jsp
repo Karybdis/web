@@ -14,8 +14,19 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        onload=function()
+        {
+            var e=document.getElementById("refreshed");
+            if(e.value=="no")e.value="yes";
+            else{e.value="no";location.reload();}
+        }  
+    </script>
 </head>
 <body>
+
+<input type="hidden" id="refreshed" value="no">
+
 <nav class="navbar navbar-default" role="navigation"  >
     <div class="container-fluid">
         <div class="navbar-header">
@@ -28,9 +39,9 @@
                     if (a==null) { %>
                 <li ><a href="login.jsp" >登录</a></li>
                 <% } else { %>
-                <li ><a href="" methods="get">登出</a></li>
-                <% String b=(String)request.getSession().getAttribute("who");
-                    if (b.equals("0")) { %>
+                <li ><a href="logoutservlet" >登出</a></li>
+               <% String b=(String)request.getSession().getAttribute("who");
+                    if ("0".equals(b)) { %>
                 <li ><a >报名</a></li>
                 <% } else { %>
                 <li class="dropdown">
@@ -44,8 +55,8 @@
                         <li><a href="#">修改比赛</a></li>
 
                     </ul>
-                <% } %>
-                   <li>Hello! <%=(String)request.getSession().getAttribute("username")%> </li>
+                        <% } %>
+                <li>Hello! <%=(String)request.getSession().getAttribute("username")%> </li>
                 <% } %>
             </ul>
         </div>
@@ -58,26 +69,45 @@
         <tr>
             <th>比赛名称</th>
             <th>比赛开始时间</th>
-            <th>比赛结束时间</th>
+            <th>报名结束时间</th>
 
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>1</td>
-            <td>8/7</td>
             <td>8/8</td>
+            <td>8/7</td>
 
         </tr>
         <tr>
             <td>2</td>
-            <td>8/8</td>
             <td>8/9</td>
+            <td>8/8</td>
 
         </tr>
         </tbody>
     </table>
 </div>
 
+<% String b=(String)request.getSession().getAttribute("who");
+    if ("1".equals(b)) { %>
+<form role="form" action="matchaddservlet">
+    <div class="form-group col-lg-3">
+        <label for="name">比赛名称</label>
+        <input type="text" class="form-control" id="name" placeholder="请输入名称" name="match_name" >
+    </div>
+    <div class="form-group col-lg-3">
+        <label for="name">比赛开始时间</label>
+        <input type="text" class="form-control" id="start_time" name="start_time" >
+    </div>
+    <div class="form-group col-lg-3">
+        <label for="name">比赛结束时间</label>
+        <input type="text" class="form-control" id="stop_time" name="stop_time">
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+<% } %>
 </body>
 </html>

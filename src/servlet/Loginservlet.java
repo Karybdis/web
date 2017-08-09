@@ -1,15 +1,12 @@
-package web;
+package servlet;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import dao.UserDao;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.rowset.serial.SerialException;
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class Loginservlet extends HttpServlet
 {
@@ -19,7 +16,7 @@ public class Loginservlet extends HttpServlet
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         String who=request.getParameter("who");
-        mysql my=new mysql();
+        UserDao my=new UserDao();
         String result=my.checkuser(username,password,who);
         if (result.equals("AllCorrect"))
         {

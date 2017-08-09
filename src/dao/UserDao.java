@@ -1,23 +1,20 @@
-package web;
+package dao;
 
-import com.sun.javaws.exceptions.ExitException;
-
-import javax.xml.stream.events.Comment;
 import java.sql.*;
 
-public class mysql
+public class UserDao
 {
     static final String  db_drive="com.mysql.jdbc.Driver";
    static final String db_url="jdbc:mysql://106.14.223.207:3306/mysql";
    //static final String db_url="jdbc:mysql://192.168.99.100:3306/mysql";
     static final String user="root";
-
+    static final String password="zjcx1997@ssc.COM";
    // static final String password="zjcx1997";
     private Connection conn=null;
     private Statement stmt=null;
     private PreparedStatement pstmt=null;
     private ResultSet rs=null;
-    public mysql()
+    public UserDao()
     {
         try
         {

@@ -1,25 +1,25 @@
-package web;
+package servlet;
+
+import bean.Match;
+import dao.MatchDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
-/**
- * Created by sunsc on 2017/7/28.
- */
-public class SignUpservlet extends HttpServlet
+public class MatchRetrieveservlet extends HttpServlet
 {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {
-        String username=request.getParameter("username");
-        String password=request.getParameter("password");
-        mysql my=new mysql();
-        my.adduser(username,password);
-        response.sendRedirect("login.jsp");
+        ArrayList<Match> matchs=new MatchDao().retrieve();
+
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

@@ -5,7 +5,7 @@
          version="3.1">
     <servlet>
         <servlet-name>loginservlet</servlet-name>
-        <servlet-class>web.Loginservlet</servlet-class>
+        <servlet-class>servlet.Loginservlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginservlet</servlet-name>
@@ -13,7 +13,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>signupservlet</servlet-name>
-        <servlet-class>web.SignUpservlet</servlet-class>
+        <servlet-class>servlet.SignUpservlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>signupservlet</servlet-name>
@@ -21,7 +21,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>logoutservlet</servlet-name>
-        <servlet-class>web.Loginservlet</servlet-class>
+        <servlet-class>servlet.Logoutservlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>logoutservlet</servlet-name>
@@ -30,4 +30,12 @@
     <welcome-file-list>
         <welcome-file>home.jsp</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>matchaddservlet</servlet-name>
+        <servlet-class>servlet.MatchAddservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>matchaddservlet</servlet-name>
+        <url-pattern>/matchaddservlet</url-pattern>
+    </servlet-mapping>
 </web-app>
