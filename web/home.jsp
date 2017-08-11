@@ -88,6 +88,8 @@
     </table>
 </div>
 
+<a href="matchretrieveservlet"><button type="button" class="btn btn-default">查询比赛</button></a>
+
 <% String b=(String)request.getSession().getAttribute("who");
     if ("1".equals(b)) { %>
 <form role="form" action="matchaddservlet">
