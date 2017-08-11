@@ -52,13 +52,31 @@ public class MatchDao
             se.printStackTrace();
         }
     }
+
+    public void delmatch(String match_name)
+    {
+        String sql;
+        sql="DELETE FROM match_info WHERE match_name='"+match_name+"'";
+        System.out.println(sql);
+        try
+        {
+            stmt=conn.createStatement();
+            stmt.executeUpdate(sql);
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+
+    }
+
     public ArrayList<Match> retrieve()
     {
         ArrayList<Match> matchs=new ArrayList<Match>();
         try
         {
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT match_name,start_time,stop_time FROM match_info");
+            rs=stmt.executeQuery("SELECT match_name,start_time,stop_time FROM match_info");
             while (rs.next())
             {
                 Match match=new Match();

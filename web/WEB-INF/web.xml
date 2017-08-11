@@ -38,4 +38,20 @@
         <servlet-name>matchaddservlet</servlet-name>
         <url-pattern>/matchaddservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>matchretrieveservlet</servlet-name>
+        <servlet-class>servlet.MatchRetrieveservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>matchretrieveservlet</servlet-name>
+        <url-pattern>/matchretrieveservlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>matchdelservlet</servlet-name>
+        <servlet-class>servlet.MatchDelservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>matchdelservlet</servlet-name>
+        <url-pattern>/matchdelservlet</url-pattern>
+    </servlet-mapping>
 </web-app>

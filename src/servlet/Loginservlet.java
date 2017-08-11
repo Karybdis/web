@@ -20,11 +20,11 @@ public class Loginservlet extends HttpServlet
         String result=my.checkuser(username,password,who);
         if (result.equals("AllCorrect"))
         {
-           request.getSession().setAttribute("username",username);
+            request.getSession().setAttribute("username",username);
             request.getSession().setAttribute("who",who);
             System.out.println("登录成功");
             response.sendRedirect("home.jsp");
-          // request.getRequestDispatcher("index.jsp").forward(request,response);
+            // request.getRequestDispatcher("index.jsp").forward(request,response);
         }
         else if (result.equals("PasswordIsWrong"))
         {
@@ -34,7 +34,7 @@ public class Loginservlet extends HttpServlet
         {
             System.out.println("没有该用户");
         }
-    //
+        //
     }
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException

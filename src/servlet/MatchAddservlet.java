@@ -17,9 +17,8 @@ public class MatchAddservlet extends HttpServlet
         String match_name=request.getParameter("match_name");
         String start_time=request.getParameter("start_time");
         String stop_time=request.getParameter("stop_time");
-        MatchDao md=new MatchDao();
-        md.addmatch(match_name,start_time,stop_time);
-        response.sendRedirect("home.jsp");
+        new MatchDao().addmatch(match_name,start_time,stop_time);
+        request.getRequestDispatcher("matchretrieveservlet").forward(request,response);
     }
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException

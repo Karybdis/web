@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: sunsc
-  Date: 2017/8/7
-  Time: 10:41
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +15,7 @@
             var e=document.getElementById("refreshed");
             if(e.value=="no")e.value="yes";
             else{e.value="no";location.reload();}
-        }  
+        }
     </script>
 </head>
 <body>
@@ -40,7 +35,7 @@
                 <li ><a href="login.jsp" >登录</a></li>
                 <% } else { %>
                 <li ><a href="logoutservlet" >登出</a></li>
-               <% String b=(String)request.getSession().getAttribute("who");
+                <% String b=(String)request.getSession().getAttribute("who");
                     if ("0".equals(b)) { %>
                 <li ><a >报名</a></li>
                 <% } else { %>
@@ -62,6 +57,7 @@
         </div>
     </div>
 </nav>
+
 <div class="container">
     <h2>比赛信息</h2>
     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -70,22 +66,24 @@
             <th>比赛名称</th>
             <th>比赛开始时间</th>
             <th>报名结束时间</th>
-
+            <th>编辑</th>
+            <th>删除</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>8/8</td>
-            <td>8/7</td>
 
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>8/9</td>
-            <td>8/8</td>
+        <c:forEach items="${matchs}" var="match">
+            <tr>
+                <td>${match.match_name}</td>
+                <td>${match.start_time}</td>
+                <td>${match.stop_time}</td>
+                <td><span class="glyphicon glyphicon-edit"></span></td>
+                <td><a href="matchdelservlet?match_name=${match.match_name}">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a></td>
+            </tr>
+        </c:forEach>
 
-        </tr>
         </tbody>
     </table>
 </div>
