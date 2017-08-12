@@ -5,6 +5,7 @@ package bean;
  */
 public class Match
 {
+    private int id;
     private String match_name;
     private String start_time;
     private String stop_time;
@@ -37,5 +38,15 @@ public class Match
     public void setStop_time(String stop_time)
     {
         this.stop_time = stop_time;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
     }
 }

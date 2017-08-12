@@ -54,4 +54,20 @@
         <servlet-name>matchdelservlet</servlet-name>
         <url-pattern>/matchdelservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>matcheditservlet</servlet-name>
+        <servlet-class>servlet.MatchEditservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>matcheditservlet</servlet-name>
+        <url-pattern>/matcheditservlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>matchupdateservlet</servlet-name>
+        <servlet-class>servlet.MatchUpdateservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>matchupdateservlet</servlet-name>
+        <url-pattern>/matchupdateservlet</url-pattern>
+    </servlet-mapping>
 </web-app>

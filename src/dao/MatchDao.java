@@ -1,6 +1,7 @@
 package dao;
 
 import bean.Match;
+import com.sun.scenario.animation.AbstractMasterTimer;
 import jdk.nashorn.internal.ir.CatchNode;
 import org.w3c.dom.ls.LSException;
 
@@ -38,7 +39,7 @@ public class MatchDao
     public void addmatch(String match_name,String start_time,String stop_time)
     {
         String sql;
-        sql="INSERT INTO match_info VALUE (?,?,?)";
+        sql="INSERT INTO match_info VALUE (null,?,?,?)";
         try
         {
             pstmt=conn.prepareStatement(sql);
@@ -53,15 +54,14 @@ public class MatchDao
         }
     }
 
-    public void delmatch(String match_name)
+    public void delmatch(int id)
     {
-        String sql;
-        sql="DELETE FROM match_info WHERE match_name='"+match_name+"'";
-        System.out.println(sql);
+        String sql="DELETE FROM match_info WHERE id=?";
         try
         {
-            stmt=conn.createStatement();
-            stmt.executeUpdate(sql);
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1,id);
+            pstmt.executeUpdate();
         }
         catch (SQLException se)
         {
@@ -70,22 +70,63 @@ public class MatchDao
 
     }
 
+    public Match editmatch(int id)
+    {
+        String sql="SELECT * FROM match_info WHERE id=?";
+        Match match=new Match();
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1,id);
+            rs=pstmt.executeQuery();
+            if (rs.next())
+            {
+                match.setId(id);
+                match.setMatch_name(rs.getString("match_name"));
+                match.setStart_time(rs.getString("start_time"));
+                match.setStop_time(rs.getString("stop_time"));
+            }
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+
+        return match;
+    }
+
+    public void updatematch(String match_name,String start_time,String stop_time,int id)
+    {
+        String sql="UPDATE match_info SET match_name=?,start_time=?,stop_time=? WHERE id=?";
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,match_name);
+            pstmt.setString(2,start_time);
+            pstmt.setString(3,stop_time);
+            pstmt.setInt(4,id);
+            pstmt.executeUpdate();
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+    }
+
     public ArrayList<Match> retrieve()
     {
         ArrayList<Match> matchs=new ArrayList<Match>();
         try
         {
             stmt = conn.createStatement();
-            rs=stmt.executeQuery("SELECT match_name,start_time,stop_time FROM match_info");
+            rs=stmt.executeQuery("SELECT id,match_name,start_time,stop_time FROM match_info");
             while (rs.next())
             {
                 Match match=new Match();
-                String match_name=rs.getString("match_name");
-                String start_time=rs.getString("start_time");
-                String stop_time=rs.getString("start_time");
-                match.setMatch_name(match_name);
-                match.setStart_time(start_time);
-                match.setStop_time(stop_time);
+                match.setId(rs.getInt("id"));
+                match.setMatch_name(rs.getString("match_name"));
+                match.setStart_time(rs.getString("start_time"));
+                match.setStop_time(rs.getString("stop_time"));
                 matchs.add(match);
             }
         }

@@ -8,15 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class MatchDelservlet extends HttpServlet
+public class MatchUpdateservlet extends HttpServlet
 {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {
+        String match_name=request.getParameter("match_name");
+        String start_time=request.getParameter("start_time");
+        String stop_time=request.getParameter("stop_time");
         int id=Integer.parseInt(request.getParameter("id"));
-        new MatchDao().delmatch(id);
+        new MatchDao().updatematch(match_name,start_time,stop_time,id);
         request.getRequestDispatcher("matchretrieveservlet").forward(request,response);
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

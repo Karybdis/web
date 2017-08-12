@@ -63,24 +63,32 @@
     <table class="table table-striped table-bordered table-hover table-condensed">
         <thead>
         <tr>
+            <th>ID</th>
             <th>比赛名称</th>
             <th>比赛开始时间</th>
             <th>报名结束时间</th>
+            <% String b=(String)request.getSession().getAttribute("who");
+                if ("1".equals(b)) { %>
             <th>编辑</th>
             <th>删除</th>
+            <% } %>
         </tr>
         </thead>
         <tbody>
-
         <c:forEach items="${matchs}" var="match">
             <tr>
+                <td>${match.id}</td>
                 <td>${match.match_name}</td>
                 <td>${match.start_time}</td>
                 <td>${match.stop_time}</td>
-                <td><span class="glyphicon glyphicon-edit"></span></td>
-                <td><a href="matchdelservlet?match_name=${match.match_name}">
+                <% if ("1".equals(b)) { %>
+                <td><a href="matcheditservlet?id=${match.id}">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a></td>
+                <td><a href="matchdelservlet?id=${match.id}">
                     <span class="glyphicon glyphicon-trash"></span>
                 </a></td>
+                <% } %>
             </tr>
         </c:forEach>
 
@@ -90,8 +98,7 @@
 
 <a href="matchretrieveservlet"><button type="button" class="btn btn-default">查询比赛</button></a>
 
-<% String b=(String)request.getSession().getAttribute("who");
-    if ("1".equals(b)) { %>
+<% if ("1".equals(b)) { %>
 <form role="form" action="matchaddservlet">
     <div class="form-group col-lg-3">
         <label for="name">比赛名称</label>
@@ -102,7 +109,7 @@
         <input type="text" class="form-control" id="start_time" name="start_time" >
     </div>
     <div class="form-group col-lg-3">
-        <label for="name">比赛结束时间</label>
+        <label for="name">报名结束时间</label>
         <input type="text" class="form-control" id="stop_time" name="stop_time">
     </div>
     <br/>
