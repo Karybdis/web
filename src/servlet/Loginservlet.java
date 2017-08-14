@@ -16,6 +16,7 @@ public class Loginservlet extends HttpServlet
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         String who=request.getParameter("who");
+
         UserDao my=new UserDao();
         String result=my.checkuser(username,password,who);
         if (result.equals("AllCorrect"))
@@ -28,13 +29,14 @@ public class Loginservlet extends HttpServlet
         }
         else if (result.equals("PasswordIsWrong"))
         {
+            response.sendRedirect("login.jsp");
             System.out.println("密码错误");
         }
         else if (result.equals("UsernameIsWrong"))
         {
+            response.sendRedirect("login.jsp");
             System.out.println("没有该用户");
         }
-        //
     }
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException

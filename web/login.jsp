@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="./include/Navigator.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,7 +28,7 @@
 <form action="loginservlet" method="get">
     <table width="350" bgcolor="#ccffff"  border="1">
         <tr align=center>
-            <td>用户名</td><td><input type="text" name="username" id="username"></td>
+            <td>学 号</td><td><input type="text" name="username" id="username"></td>
         </tr>
         <tr align=center><td>密 码</td><td><input type="password" name="password" id="password" ></td></tr>
         <tr align="center">

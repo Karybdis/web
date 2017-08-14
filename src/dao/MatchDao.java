@@ -36,16 +36,17 @@ public class MatchDao
             e.printStackTrace();
         }
     }
-    public void addmatch(String match_name,String start_time,String stop_time)
+    public void addmatch(String match_name,String start_time,String stop_time,int teammate_num)
     {
         String sql;
-        sql="INSERT INTO match_info VALUE (null,?,?,?)";
+        sql="INSERT INTO match_info VALUE (null,?,?,?,?)";
         try
         {
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,match_name);
             pstmt.setString(2,start_time);
             pstmt.setString(3,stop_time);
+            pstmt.setInt(4,teammate_num);
             pstmt.executeUpdate();
         }
         catch (SQLException se)
@@ -85,6 +86,7 @@ public class MatchDao
                 match.setMatch_name(rs.getString("match_name"));
                 match.setStart_time(rs.getString("start_time"));
                 match.setStop_time(rs.getString("stop_time"));
+                match.setTeammate_num(rs.getInt("teammate_num"));
             }
         }
         catch (SQLException se)
@@ -95,16 +97,17 @@ public class MatchDao
         return match;
     }
 
-    public void updatematch(String match_name,String start_time,String stop_time,int id)
+    public void updatematch(String match_name,String start_time,String stop_time,int teammate_num,int id)
     {
-        String sql="UPDATE match_info SET match_name=?,start_time=?,stop_time=? WHERE id=?";
+        String sql="UPDATE match_info SET match_name=?,start_time=?,stop_time=?,teammate_num=? WHERE id=?";
         try
         {
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,match_name);
             pstmt.setString(2,start_time);
             pstmt.setString(3,stop_time);
-            pstmt.setInt(4,id);
+            pstmt.setInt(4,teammate_num);
+            pstmt.setInt(5,id);
             pstmt.executeUpdate();
         }
         catch (SQLException se)
@@ -112,6 +115,7 @@ public class MatchDao
             se.printStackTrace();
         }
     }
+
 
     public ArrayList<Match> retrieve()
     {

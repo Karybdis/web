@@ -9,6 +9,7 @@ public class Match
     private String match_name;
     private String start_time;
     private String stop_time;
+    private int teammate_num;
 
     public String getMatch_name()
     {
@@ -48,5 +49,15 @@ public class Match
     public void setId(int id)
     {
         this.id = id;
+    }
+
+    public int getTeammate_num()
+    {
+        return teammate_num;
+    }
+
+    public void setTeammate_num(int teammate_num)
+    {
+        this.teammate_num = teammate_num;
     }
 }

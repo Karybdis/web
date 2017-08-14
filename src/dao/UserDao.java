@@ -50,7 +50,7 @@ public class UserDao
 
         try{
             stmt=conn.createStatement();
-           if (who.equals("0")) rs=stmt.executeQuery("SELECT username,password FROM  sun_login");
+           if (who.equals("0")) rs=stmt.executeQuery("SELECT username,password FROM  user_login");
            else rs=stmt.executeQuery("SELECT username,password FROM  admin_login");
             while (rs.next())
             {
@@ -76,15 +76,18 @@ public class UserDao
         return "UsernameIsWrong";
     }
 
-    public void adduser(String username,String password)
+    public void adduser(String username,String password,String name ,int sex,String email)
     {
         String sql;
-        sql="INSERT INTO sun_login VALUE (?,?)";
+        sql="INSERT INTO user_login VALUE (?,?,?,?,?)";
         try
         {
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,username);
             pstmt.setString(2,password);
+            pstmt.setString(3,name);
+            pstmt.setInt(4,sex);
+            pstmt.setString(5,email);
             pstmt.executeUpdate();
         }
         catch (SQLException se)

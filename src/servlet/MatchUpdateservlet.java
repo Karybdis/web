@@ -16,8 +16,9 @@ public class MatchUpdateservlet extends HttpServlet
         String match_name=request.getParameter("match_name");
         String start_time=request.getParameter("start_time");
         String stop_time=request.getParameter("stop_time");
+        int teammate_num=Integer.parseInt(request.getParameter("teammate_num"));
         int id=Integer.parseInt(request.getParameter("id"));
-        new MatchDao().updatematch(match_name,start_time,stop_time,id);
+        new MatchDao().updatematch(match_name,start_time,stop_time,teammate_num,id);
         request.getRequestDispatcher("matchretrieveservlet").forward(request,response);
     }
 

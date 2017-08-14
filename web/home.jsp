@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="./include/Navigator.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -22,42 +23,6 @@
 
 <input type="hidden" id="refreshed" value="no">
 
-<nav class="navbar navbar-default" role="navigation"  >
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" >网站导航</a>
-        </div>
-        <div>
-            <ul class="nav navbar-nav">
-                <li ><a href="home.jsp">主页</a></li>
-                <% String a=(String)request.getSession().getAttribute("username");
-                    if (a==null) { %>
-                <li ><a href="login.jsp" >登录</a></li>
-                <% } else { %>
-                <li ><a href="logoutservlet" >登出</a></li>
-                <% String b=(String)request.getSession().getAttribute("who");
-                    if ("0".equals(b)) { %>
-                <li ><a >报名</a></li>
-                <% } else { %>
-                <li class="dropdown">
-                    <a href="match.jsp" class="dropdown-toggle" data-toggle="dropdown">
-                        比赛设置
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">添加比赛</a></li>
-                        <li><a href="#">删除比赛</a></li>
-                        <li><a href="#">修改比赛</a></li>
-
-                    </ul>
-                        <% } %>
-                <li>Hello! <%=(String)request.getSession().getAttribute("username")%> </li>
-                <% } %>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <div class="container">
     <h2>比赛信息</h2>
     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -71,6 +36,8 @@
                 if ("1".equals(b)) { %>
             <th>编辑</th>
             <th>删除</th>
+            <% }  else if ("0".equals(b)) { %>
+            <th>报名</th>
             <% } %>
         </tr>
         </thead>
@@ -88,6 +55,10 @@
                 <td><a href="matchdelservlet?id=${match.id}">
                     <span class="glyphicon glyphicon-trash"></span>
                 </a></td>
+                <% } else if ("0".equals(b))  { %>
+                <td>  <a href="matchenterservlet?id=${match.id}">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a></td>
                 <% } %>
             </tr>
         </c:forEach>
@@ -99,23 +70,33 @@
 <a href="matchretrieveservlet"><button type="button" class="btn btn-default">查询比赛</button></a>
 
 <% if ("1".equals(b)) { %>
-<form role="form" action="matchaddservlet">
-    <div class="form-group col-lg-3">
-        <label for="name">比赛名称</label>
-        <input type="text" class="form-control" id="name" placeholder="请输入名称" name="match_name" >
+<div class="panel panel-success">
+    <div class="panel-heading">新增比赛</div>
+    <div class="panel-body">
+        <form role="form" action="matchaddservlet">
+            <div class="form-group col-lg-3">
+                <label for="name">比赛名称</label>
+                <input type="text" class="form-control" id="name" placeholder="请输入名称" name="match_name" >
+            </div>
+            <div class="form-group col-lg-3">
+                <label for="start_time">比赛开始时间</label>
+                <input type="text" class="form-control" id="start_time" name="start_time" >
+            </div>
+            <div class="form-group col-lg-3">
+                <label for="stop_time">报名结束时间</label>
+                <input type="text" class="form-control" id="stop_time" name="stop_time">
+            </div>
+            <div class="form-group col-lg-3" >
+                <label for="teammate_num">队伍人数</label>
+                <input type="text" class="form-control" id="teammate_num" name="teammate_num">
+            </div>
+            <div align="center">
+                <button type="submit" class="btn btn-default" >提交</button>
+            </div>
+        </form>
     </div>
-    <div class="form-group col-lg-3">
-        <label for="name">比赛开始时间</label>
-        <input type="text" class="form-control" id="start_time" name="start_time" >
-    </div>
-    <div class="form-group col-lg-3">
-        <label for="name">报名结束时间</label>
-        <input type="text" class="form-control" id="stop_time" name="stop_time">
-    </div>
-    <br/>
-    <button type="submit" class="btn btn-default">提交</button>
-</form>
+</div>
 <% } %>
-<p>管理员 admin 123</p>
+<%@ include file="./include/Footer.jsp" %>
 </body>
 </html>
