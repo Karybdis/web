@@ -78,4 +78,12 @@
         <servlet-name>matchenterservlet</servlet-name>
         <url-pattern>/matchenterservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>userenterservlet</servlet-name>
+        <servlet-class>servlet.UserEnterservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userenterservlet</servlet-name>
+        <url-pattern>/userenterservlet</url-pattern>
+    </servlet-mapping>
 </web-app>

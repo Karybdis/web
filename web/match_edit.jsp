@@ -8,8 +8,8 @@
 <body>
 <form role="form" action="matchupdateservlet" >
     <div class="form-group col-lg-3">
-        <label for="name">比赛名称</label>
-        <input type="text" class="form-control" id="name" value="${match.match_name}" name="match_name" >
+        <label for="match_name">比赛名称</label>
+        <input type="text" class="form-control" id="match_name" value="${match.match_name}" name="match_name" >
     </div>
     <div class="form-group col-lg-3">
         <label for="start_time">比赛开始时间</label>

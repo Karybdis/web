@@ -1,15 +1,21 @@
 package dao;
 
+import bean.User;
+
+import javax.jws.soap.SOAPBinding;
+import javax.xml.ws.Response;
+import java.net.ResponseCache;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UserDao
 {
     static final String  db_drive="com.mysql.jdbc.Driver";
-   static final String db_url="jdbc:mysql://106.14.223.207:3306/mysql";
-   //static final String db_url="jdbc:mysql://192.168.99.100:3306/mysql";
+    static final String db_url="jdbc:mysql://106.14.223.207:3306/mysql";
+    //static final String db_url="jdbc:mysql://192.168.99.100:3306/mysql";
     static final String user="root";
     static final String password="zjcx1997@ssc.COM";
-   // static final String password="zjcx1997";
+    // static final String password="zjcx1997";
     private Connection conn=null;
     private Statement stmt=null;
     private PreparedStatement pstmt=null;
@@ -50,8 +56,8 @@ public class UserDao
 
         try{
             stmt=conn.createStatement();
-           if (who.equals("0")) rs=stmt.executeQuery("SELECT username,password FROM  user_login");
-           else rs=stmt.executeQuery("SELECT username,password FROM  admin_login");
+            if (who.equals("0")) rs=stmt.executeQuery("SELECT username,password FROM  user_login");
+            else rs=stmt.executeQuery("SELECT username,password FROM  admin_login");
             while (rs.next())
             {
                 String exist_username = rs.getString("username");
@@ -96,80 +102,44 @@ public class UserDao
         }
     }
 
-    /*private void closeconn()
+    public void user_match(String username,String name,int sex,int id)
     {
+        String sql="INSERT INTO user_match VALUE (?,?,?,?)";
         try
         {
-            if(conn!=null) conn.close();
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,username);
+            pstmt.setString(2,name);
+            pstmt.setInt(3,sex);
+            pstmt.setInt(4,id);
+            pstmt.executeUpdate();
         }
-        catch(SQLException se)
+        catch (SQLException se)
         {
             se.printStackTrace();
         }
-    }*/
+    }
 
-
-
-
-    /******************测试用**************/
-   /* public static void main(String[] args) {
-        Connection conn = null;
-        Statement stmt = null;
-        try{
-            // 注册 JDBC 驱动
-            Class.forName("com.mysql.jdbc.Driver");
-
-            // 打开链接
-            System.out.println("连接数据库...");
-            conn = DriverManager.getConnection(db_url,user,password);
-
-            // 执行查询
-            System.out.println(" 实例化Statement对...");
-            stmt = conn.createStatement();
-            String sql;
-            sql = "SELECT username, password FROM sun_login";
-            ResultSet rs = stmt.executeQuery(sql);
-            String a="sun";
-            String b="zjcx1997";
-            // 展开结果集数据库
-            while(rs.next()){
-                // 通过字段检索
-                String user = rs.getString("username");
-                String pass = rs.getString("password");
-
-                // 输出数据
-               if  (a.equals(user))
-               {
-                   if (b.equals(pass))
-                       System.out.println("登陆成功");
-                   else System.out.println("登录失败");
-
-               }
-            }
-            // 完成后关闭
-            rs.close();
-            stmt.close();
-            conn.close();
-        }catch(SQLException se){
-            // 处理 JDBC 错误
-            se.printStackTrace();
-        }catch(Exception e){
-            // 处理 Class.forName 错误
-            e.printStackTrace();
-        }finally{
-            // 关闭资源
-            try{
-                if(stmt!=null) stmt.close();
-            }catch(SQLException se2){
-            }// 什么都不做
-            try{
-                if(conn!=null) conn.close();
-            }catch(SQLException se){
-                se.printStackTrace();
+    public void enteruser(String[] usernames,int id)
+    {
+        String sql="SELECT * FROM user_login WHERE username=?";
+        try
+        {
+            for (int i=0;i<usernames.length;i++)
+            {
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1, usernames[i]);
+                rs=pstmt.executeQuery();
+                while (rs.next())
+                {
+                   user_match(rs.getString("username"),rs.getString("name"),rs.getInt("sex"),id);
+                }
             }
         }
-        System.out.println("Goodbye!");
-    }*/
-
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+    }
 }
 

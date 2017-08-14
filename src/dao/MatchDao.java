@@ -36,6 +36,7 @@ public class MatchDao
             e.printStackTrace();
         }
     }
+
     public void addmatch(String match_name,String start_time,String stop_time,int teammate_num)
     {
         String sql;
@@ -68,7 +69,6 @@ public class MatchDao
         {
             se.printStackTrace();
         }
-
     }
 
     public Match editmatch(int id)
@@ -93,7 +93,6 @@ public class MatchDao
         {
             se.printStackTrace();
         }
-
         return match;
     }
 
