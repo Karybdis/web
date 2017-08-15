@@ -15,6 +15,7 @@
     </script>
 </head>
 <body>
+
 <input type="hidden" id="refreshed" value="no">
 
 <nav class="navbar navbar-default" role="navigation"  >
@@ -30,9 +31,28 @@
                 <li ><a href="login.jsp" class="glyphicon glyphicon-log-in">登录/注册</a></li>
                 <% } else { %>
                 <li ><a href="logoutservlet" class="glyphicon glyphicon-log-out" >登出</a></li>
-                <li>Hello! <%=(String)request.getSession().getAttribute("username")%> </li>
+                <p class="navbar-text navbar-right">
+                    Hello! <%=(String)request.getSession().getAttribute("username")%>
+                </p>
+                <% } %>
+              <%  String b=(String)request.getSession().getAttribute("who");
+              if ("0".equals(b)) {%>
+                <li><a href="modify_pass.jsp">修改密码</a></li>
                 <% } %>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        个人设置 <b class="caret"></b>
+                    </a>
+                    <ul  class="dropdown-menu">
+
+                        <li><a>我的比赛</a></li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
     </div>
 </nav>

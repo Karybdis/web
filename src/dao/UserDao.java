@@ -102,7 +102,7 @@ public class UserDao
         }
     }
 
-    public void user_match(String username,String name,int sex,int id)
+    public void adduser_match(String username,String name,int sex,int id)
     {
         String sql="INSERT INTO user_match VALUE (?,?,?,?)";
         try
@@ -132,7 +132,33 @@ public class UserDao
                 rs=pstmt.executeQuery();
                 while (rs.next())
                 {
-                   user_match(rs.getString("username"),rs.getString("name"),rs.getInt("sex"),id);
+                   adduser_match(rs.getString("username"),rs.getString("name"),rs.getInt("sex"),id);
+                }
+            }
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+    }
+    public void modify_password(String ex_password,String password,String username)
+    {
+        String sql="SELECT * FROM user_login WHERE username=?";
+        System.out.println(username);
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,username);
+            rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                if (ex_password.equals(rs.getString("password")))
+                {
+                    sql="UPDATE user_login SET password=? WHERE username=?";
+                    pstmt=conn.prepareStatement(sql);
+                    pstmt.setString(1,password);
+                    pstmt.setString(2,username);
+                    pstmt.executeUpdate();
                 }
             }
         }

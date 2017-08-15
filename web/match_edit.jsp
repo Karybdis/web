@@ -9,19 +9,19 @@
 <form role="form" action="matchupdateservlet" >
     <div class="form-group col-lg-3">
         <label for="match_name">比赛名称</label>
-        <input type="text" class="form-control" id="match_name" value="${match.match_name}" name="match_name" >
+        <input type="text" class="form-control" id="match_name" value="${match.match_name}" name="match_name"/>
     </div>
     <div class="form-group col-lg-3">
         <label for="start_time">比赛开始时间</label>
-        <input type="text" class="form-control" id="start_time" value="${match.start_time}" name="start_time" >
+        <input type="text" class="form-control" id="start_time" value="${match.start_time}" name="start_time"/>
     </div>
     <div class="form-group col-lg-3">
         <label for="stop_time">报名结束时间</label>
-        <input type="text" class="form-control" id="stop_time" value="${match.stop_time}" name="stop_time">
+        <input type="text" class="form-control" id="stop_time" value="${match.stop_time}" name="stop_time"/>
     </div>
     <div class="form-group col-lg-3">
         <label for="teammate_num">队伍人数</label>
-        <input type="text" class="form-control" id="teammate_num" value="${match.teammate_num}" name="teammate_num">
+        <input type="text" class="form-control" id="teammate_num" value="${match.teammate_num}" name="teammate_num"/>
     </div>
     <br/>
     <input type="hidden" name="id" value="${match.id}">

@@ -17,7 +17,7 @@
             </c:if>
             <input type="text" class="form-control" id="username" name="username">
         </c:forEach>
-        <input type="hidden"  value="${match.id}" name="id">
+        <input type="hidden"  value="${match.id}" name="id"/>
         <button type="submit" class="btn btn-default" >提交</button>
     </div>
 </form>

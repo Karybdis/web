@@ -12,8 +12,6 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-
 <div class="container">
     <h2>比赛信息</h2>
     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -23,8 +21,7 @@
             <th>比赛名称</th>
             <th>比赛开始时间</th>
             <th>报名结束时间</th>
-            <% String b=(String)request.getSession().getAttribute("who");
-                if ("1".equals(b)) { %>
+            <% if ("1".equals(b)) { %>
             <th>编辑</th>
             <th>删除</th>
             <% }  else if ("0".equals(b)) { %>
@@ -66,19 +63,19 @@
         <form role="form" action="matchaddservlet">
             <div class="form-group col-lg-3">
                 <label for="name">比赛名称</label>
-                <input type="text" class="form-control" id="name" placeholder="请输入名称" name="match_name" >
+                <input type="text" class="form-control" id="name" placeholder="请输入名称" name="match_name"/>
             </div>
             <div class="form-group col-lg-3">
                 <label for="start_time">比赛开始时间</label>
-                <input type="text" class="form-control" id="start_time" name="start_time" >
+                <input type="text" class="form-control" id="start_time" name="start_time"/>
             </div>
             <div class="form-group col-lg-3">
                 <label for="stop_time">报名结束时间</label>
-                <input type="text" class="form-control" id="stop_time" name="stop_time">
+                <input type="text" class="form-control" id="stop_time" name="stop_time"/>
             </div>
             <div class="form-group col-lg-3" >
                 <label for="teammate_num">队伍人数</label>
-                <input type="text" class="form-control" id="teammate_num" name="teammate_num">
+                <input type="text" class="form-control" id="teammate_num" name="teammate_num"/>
             </div>
             <div align="center">
                 <button type="submit" class="btn btn-default" >提交</button>

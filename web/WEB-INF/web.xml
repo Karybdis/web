@@ -86,4 +86,12 @@
         <servlet-name>userenterservlet</servlet-name>
         <url-pattern>/userenterservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>modifypasswordservlet</servlet-name>
+        <servlet-class>servlet.ModifyPasswordservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modifypasswordservlet</servlet-name>
+        <url-pattern>/modifypasswordservlet</url-pattern>
+    </servlet-mapping>
 </web-app>
