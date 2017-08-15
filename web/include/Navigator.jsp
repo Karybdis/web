@@ -5,8 +5,18 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        onload=function()
+        {
+            var e=document.getElementById("refreshed");
+            if(e.value=="no")e.value="yes";
+            else{e.value="no";location.reload();}
+        }
+    </script>
 </head>
 <body>
+<input type="hidden" id="refreshed" value="no">
+
 <nav class="navbar navbar-default" role="navigation"  >
     <div class="container-fluid">
         <div class="navbar-header">

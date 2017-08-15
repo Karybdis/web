@@ -25,7 +25,10 @@
     </div>
     <br/>
     <input type="hidden" name="id" value="${match.id}">
-    <button type="submit" class="btn btn-default">提交</button>
+    <div align="center">
+        <button type="submit" class="btn btn-default">提交</button>
+    </div>
 </form>
+<%@ include file="./include/Footer.jsp" %>
 </body>
 </html>

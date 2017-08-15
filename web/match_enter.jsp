@@ -21,5 +21,6 @@
         <button type="submit" class="btn btn-default" >提交</button>
     </div>
 </form>
+<%@ include file="./include/Footer.jsp" %>
 </body>
 </html>

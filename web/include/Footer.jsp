@@ -12,9 +12,8 @@
 <body>
 <div class="footer">
     <hr>
-    <p align="right"> Made By @Sun</p>
-    <br/>
-    <p align="right">管理员 admin 123</p>
+    <p align="right"> Created By @Sun </p>
+    <p align="right">管理员 admin 123 </p>
 </div>
 </body>
 </html>
