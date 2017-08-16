@@ -94,4 +94,20 @@
         <servlet-name>modifypasswordservlet</servlet-name>
         <url-pattern>/modifypasswordservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>mymatchservlet</servlet-name>
+        <servlet-class>servlet.MyMatchservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mymatchservlet</servlet-name>
+        <url-pattern>/mymatchservlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>delmymatchservlet</servlet-name>
+        <servlet-class>servlet.DelMyMatchservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delmymatchservlet</servlet-name>
+        <url-pattern>/delmymatchservlet</url-pattern>
+    </servlet-mapping>
 </web-app>

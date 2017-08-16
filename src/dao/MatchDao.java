@@ -37,7 +37,22 @@ public class MatchDao
         }
     }
 
-    public void addmatch(String match_name,String start_time,String stop_time,int teammate_num)
+    private void close()
+    {
+        try
+        {
+            if (rs!=null) rs.close();
+            conn.close();
+            if (stmt!=null) stmt.close();
+            if (pstmt!=null) pstmt.close();
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+    }
+
+    public void addmatch(String match_name,String start_time,String stop_time,int teammate_num) //添加比赛
     {
         String sql;
         sql="INSERT INTO match_info VALUE (null,?,?,?,?)";
@@ -54,9 +69,10 @@ public class MatchDao
         {
             se.printStackTrace();
         }
+        close();
     }
 
-    public void delmatch(int id)
+    public void delmatch(int id) //删除比赛
     {
         String sql="DELETE FROM match_info WHERE id=?";
         try
@@ -69,9 +85,10 @@ public class MatchDao
         {
             se.printStackTrace();
         }
+        close();
     }
 
-    public Match editmatch(int id)
+    public Match editmatch(int id)  //编辑比赛
     {
         String sql="SELECT * FROM match_info WHERE id=?";
         Match match=new Match();
@@ -93,10 +110,11 @@ public class MatchDao
         {
             se.printStackTrace();
         }
+        close();
         return match;
     }
 
-    public void updatematch(String match_name,String start_time,String stop_time,int teammate_num,int id)
+    public void updatematch(String match_name,String start_time,String stop_time,int teammate_num,int id) //更新编辑好的比赛
     {
         String sql="UPDATE match_info SET match_name=?,start_time=?,stop_time=?,teammate_num=? WHERE id=?";
         try
@@ -113,10 +131,11 @@ public class MatchDao
         {
             se.printStackTrace();
         }
+        close();
     }
 
 
-    public ArrayList<Match> retrieve()
+    public ArrayList<Match> retrieve()  //主页显示比赛
     {
         ArrayList<Match> matchs=new ArrayList<Match>();
         try
@@ -137,6 +156,7 @@ public class MatchDao
         {
             se.printStackTrace();
         }
+        close();
         return matchs;
     }
 }

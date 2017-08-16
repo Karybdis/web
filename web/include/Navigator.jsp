@@ -35,24 +35,23 @@
                     Hello! <%=(String)request.getSession().getAttribute("username")%>
                 </p>
                 <% } %>
-              <%  String b=(String)request.getSession().getAttribute("who");
-              if ("0".equals(b)) {%>
-                <li><a href="modify_pass.jsp">修改密码</a></li>
-                <% } %>
+
+
             </ul>
+            <%  String b=(String)request.getSession().getAttribute("who");
+                if ("0".equals(b)) {%>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         个人设置 <b class="caret"></b>
                     </a>
                     <ul  class="dropdown-menu">
-
-                        <li><a>我的比赛</a></li>
+                        <li><a href="mymatchservlet?username=<%=(String)request.getSession().getAttribute("username")%>">我的比赛</a></li>
+                        <li><a href="modify_pass.jsp">修改密码</a></li>
                     </ul>
                 </li>
             </ul>
-
+            <% } %>
         </div>
     </div>
 </nav>

@@ -7,9 +7,6 @@
 <head>
     <meta charset="utf-8">
     <title>自动化科协报名网站</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -53,14 +50,16 @@
         </tbody>
     </table>
 </div>
-
 <a href="matchretrieveservlet"><button type="button" class="btn btn-default">查询比赛</button></a>
-
 <% if ("1".equals(b)) { %>
 <div class="panel panel-success">
     <div class="panel-heading">新增比赛</div>
     <div class="panel-body">
         <form role="form" action="matchaddservlet">
+          <!--  <div class="form-group col-lg-12">
+                <label for="information">比赛详情</label>
+               <textarea rows="15" class="form-control" id="information" name="information"></textarea>
+            </div> -->
             <div class="form-group col-lg-3">
                 <label for="name">比赛名称</label>
                 <input type="text" class="form-control" id="name" placeholder="请输入名称" name="match_name"/>

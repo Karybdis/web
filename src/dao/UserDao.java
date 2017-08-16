@@ -1,12 +1,17 @@
 package dao;
 
+import bean.Match;
 import bean.User;
+import sun.print.PSStreamPrintService;
 
 import javax.jws.soap.SOAPBinding;
+import javax.servlet.http.Cookie;
 import javax.xml.ws.Response;
 import java.net.ResponseCache;
+import java.security.cert.CertPathParameters;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class UserDao
 {
@@ -41,9 +46,10 @@ public class UserDao
     {
         try
         {
-            rs.close();
-            stmt.close();
+            if (rs!=null) rs.close();
             conn.close();
+            if (stmt!=null) stmt.close();
+            if (pstmt!=null) pstmt.close();
         }
         catch (SQLException se)
         {
@@ -51,7 +57,7 @@ public class UserDao
         }
     }
 
-    public String checkuser(String username,String password,String who)
+    public String checkuser(String username,String password,String who)  //登录检测
     {
 
         try{
@@ -82,7 +88,7 @@ public class UserDao
         return "UsernameIsWrong";
     }
 
-    public void adduser(String username,String password,String name ,int sex,String email)
+    public void adduser(String username,String password,String name ,int sex,String email)  //添加用户
     {
         String sql;
         sql="INSERT INTO user_login VALUE (?,?,?,?,?)";
@@ -100,18 +106,39 @@ public class UserDao
         {
             se.printStackTrace();
         }
+        close();
     }
 
-    public void adduser_match(String username,String name,int sex,int id)
+    public void deluser_match(String username,int id)
     {
-        String sql="INSERT INTO user_match VALUE (?,?,?,?)";
+        String sql="DELETE FROM user_match WHERE leader_name=? AND id=?";
+        try
+        {
+           pstmt=conn.prepareStatement(sql);
+           pstmt.setString(1,username);
+           pstmt.setInt(2,id);
+           pstmt.executeUpdate();
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+        close();
+    }
+
+    public void adduser_match(String username,String name,int sex,int id,String leader_name)  //添加用户与报名的比赛
+    {
+        String sql="INSERT INTO user_match VALUE (?,?,?,?,?,?)";
         try
         {
             pstmt=conn.prepareStatement(sql);
-            pstmt.setString(1,username);
-            pstmt.setString(2,name);
-            pstmt.setInt(3,sex);
-            pstmt.setInt(4,id);
+            pstmt.setString(1,leader_name);
+            pstmt.setString(2,username);
+            pstmt.setString(3,name);
+            pstmt.setInt(4,sex);
+            pstmt.setInt(5,id);
+            if (username.equals(leader_name)) pstmt.setInt(6,1);
+            else pstmt.setInt(6,0);
             pstmt.executeUpdate();
         }
         catch (SQLException se)
@@ -120,9 +147,10 @@ public class UserDao
         }
     }
 
-    public void enteruser(String[] usernames,int id)
+    public void enteruser(String[] usernames,int id)  //报名比赛
     {
         String sql="SELECT * FROM user_login WHERE username=?";
+        String leader_name=usernames[0];
         try
         {
             for (int i=0;i<usernames.length;i++)
@@ -130,9 +158,10 @@ public class UserDao
                 pstmt=conn.prepareStatement(sql);
                 pstmt.setString(1, usernames[i]);
                 rs=pstmt.executeQuery();
+                System.out.println(leader_name);
                 while (rs.next())
                 {
-                   adduser_match(rs.getString("username"),rs.getString("name"),rs.getInt("sex"),id);
+                    adduser_match(rs.getString("username"),rs.getString("name"),rs.getInt("sex"),id,leader_name);
                 }
             }
         }
@@ -140,11 +169,57 @@ public class UserDao
         {
             se.printStackTrace();
         }
+        close();
     }
-    public void modify_password(String ex_password,String password,String username)
+
+    public  ArrayList<Match> my_match(String username)
+    {
+        ArrayList<Match> matchs=new ArrayList<Match>();
+        String sql="SELECT * FROM user_match WHERE username=?";
+        int[] id=new int[10];
+        int[] leader=new int[10];
+        int i=0;
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,username);
+            rs=pstmt.executeQuery();
+            while (rs.next())
+            {
+                id[i]=rs.getInt("id");
+                leader[i]=rs.getInt("leader");
+                i++;
+            }
+            sql="SELECT  * FROM  match_info WHERE id=?";
+            for (i=0;i<id.length;i++)
+            {
+                pstmt= conn.prepareStatement(sql);
+                pstmt.setInt(1,id[i]);
+                rs=pstmt.executeQuery();
+                while(rs.next())
+                {
+                    Match match=new Match();
+                    match.setId(rs.getInt("id"));
+                    match.setMatch_name(rs.getString("match_name"));
+                    match.setStart_time(rs.getString("start_time"));
+                    match.setStop_time(rs.getString("stop_time"));
+                    if (leader[i]==1) match.setLeader(1);
+                    else match.setLeader(0);
+                    matchs.add(match);
+                }
+            }
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+        close();
+        return matchs;
+    }
+
+    public void modify_password(String ex_password,String password,String username)  //修改密码
     {
         String sql="SELECT * FROM user_login WHERE username=?";
-        System.out.println(username);
         try
         {
             pstmt=conn.prepareStatement(sql);
@@ -166,6 +241,7 @@ public class UserDao
         {
             se.printStackTrace();
         }
+        close();
     }
 }
 
