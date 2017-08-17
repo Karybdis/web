@@ -7,6 +7,10 @@
 </head>
 <body>
 <form role="form" action="matchupdateservlet" >
+    <div class="form-group col-lg-12">
+        <label for="information">比赛详情</label>
+        <textarea rows="15" class="form-control" id="information"  name="information">${match.information}</textarea>
+    </div>
     <div class="form-group col-lg-3">
         <label for="match_name">比赛名称</label>
         <input type="text" class="form-control" id="match_name" value="${match.match_name}" name="match_name"/>

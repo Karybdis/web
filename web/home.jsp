@@ -30,7 +30,7 @@
         <c:forEach items="${matchs}" var="match">
             <tr>
                 <td>${match.id}</td>
-                <td>${match.match_name}</td>
+                <td><a href="information.jsp?information=${match.information}">${match.match_name}</a></td>
                 <td>${match.start_time}</td>
                 <td>${match.stop_time}</td>
                 <% if ("1".equals(b)) { %>
@@ -56,10 +56,10 @@
     <div class="panel-heading">新增比赛</div>
     <div class="panel-body">
         <form role="form" action="matchaddservlet">
-          <!--  <div class="form-group col-lg-12">
+            <div class="form-group col-lg-12">
                 <label for="information">比赛详情</label>
-               <textarea rows="15" class="form-control" id="information" name="information"></textarea>
-            </div> -->
+                <textarea rows="15" class="form-control" id="information" name="information"></textarea>
+            </div>
             <div class="form-group col-lg-3">
                 <label for="name">比赛名称</label>
                 <input type="text" class="form-control" id="name" placeholder="请输入名称" name="match_name"/>

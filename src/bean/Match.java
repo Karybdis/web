@@ -10,6 +10,7 @@ public class Match
     private String start_time;
     private String stop_time;
     private int teammate_num;
+    private String information;
     private int leader;
 
     public String getMatch_name()
@@ -70,5 +71,15 @@ public class Match
     public void setLeader(int leader)
     {
         this.leader = leader;
+    }
+
+    public String getInformation()
+    {
+        return information;
+    }
+
+    public void setInformation(String information)
+    {
+        this.information = information;
     }
 }

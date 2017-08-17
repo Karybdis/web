@@ -52,10 +52,10 @@ public class MatchDao
         }
     }
 
-    public void addmatch(String match_name,String start_time,String stop_time,int teammate_num) //添加比赛
+    public void addmatch(String match_name,String start_time,String stop_time,int teammate_num,String information) //添加比赛
     {
         String sql;
-        sql="INSERT INTO match_info VALUE (null,?,?,?,?)";
+        sql="INSERT INTO match_info VALUE (null,?,?,?,?,?)";
         try
         {
             pstmt=conn.prepareStatement(sql);
@@ -63,6 +63,7 @@ public class MatchDao
             pstmt.setString(2,start_time);
             pstmt.setString(3,stop_time);
             pstmt.setInt(4,teammate_num);
+            pstmt.setString(5,information);
             pstmt.executeUpdate();
         }
         catch (SQLException se)
@@ -104,6 +105,7 @@ public class MatchDao
                 match.setStart_time(rs.getString("start_time"));
                 match.setStop_time(rs.getString("stop_time"));
                 match.setTeammate_num(rs.getInt("teammate_num"));
+                match.setInformation(rs.getString("information"));
             }
         }
         catch (SQLException se)
@@ -114,9 +116,9 @@ public class MatchDao
         return match;
     }
 
-    public void updatematch(String match_name,String start_time,String stop_time,int teammate_num,int id) //更新编辑好的比赛
+    public void updatematch(String match_name,String start_time,String stop_time,int teammate_num,String information,int id) //更新编辑好的比赛
     {
-        String sql="UPDATE match_info SET match_name=?,start_time=?,stop_time=?,teammate_num=? WHERE id=?";
+        String sql="UPDATE match_info SET match_name=?,start_time=?,stop_time=?,teammate_num=?,information=? WHERE id=?";
         try
         {
             pstmt=conn.prepareStatement(sql);
@@ -124,7 +126,8 @@ public class MatchDao
             pstmt.setString(2,start_time);
             pstmt.setString(3,stop_time);
             pstmt.setInt(4,teammate_num);
-            pstmt.setInt(5,id);
+            pstmt.setString(5,information);
+            pstmt.setInt(6,id);
             pstmt.executeUpdate();
         }
         catch (SQLException se)
@@ -141,7 +144,7 @@ public class MatchDao
         try
         {
             stmt = conn.createStatement();
-            rs=stmt.executeQuery("SELECT id,match_name,start_time,stop_time FROM match_info");
+            rs=stmt.executeQuery("SELECT * FROM match_info");
             while (rs.next())
             {
                 Match match=new Match();
@@ -149,6 +152,7 @@ public class MatchDao
                 match.setMatch_name(rs.getString("match_name"));
                 match.setStart_time(rs.getString("start_time"));
                 match.setStop_time(rs.getString("stop_time"));
+                match.setInformation(rs.getNString("information"));
                 matchs.add(match);
             }
         }
