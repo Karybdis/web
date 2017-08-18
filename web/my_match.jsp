@@ -22,7 +22,7 @@
         <c:forEach items="${matchs}" var="match">
             <tr>
                 <td>${match.id}</td>
-                <td>${match.match_name}</td>
+                <td><a href="information.jsp?information=${match.information}">${match.match_name}</a></td>
                 <td>${match.start_time}</td>
                 <td>${match.stop_time}</td>
                 <c:if test="${match.leader==1}">

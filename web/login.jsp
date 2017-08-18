@@ -45,6 +45,11 @@
                 <input type="radio" name="who" value="0" checked/> 用户
                 <input type="radio" name="who" value="1"/> 管理员
             </div>
+            <% if  ("PasswordIsWrong".equals(request.getAttribute("answer"))) { %>
+            <p style="color:red" align="center">密码错误</p>
+            <% }  else if ("UsernameIsWrong".equals(request.getAttribute("answer"))) { %>
+            <p style="color:red" align="center">该用户不存在</p>
+            <% } %>
             <div class="form-group" align="center">
                 <button class="btn btn-info" type="submit" onclick="r()">登 录</button>
                 <button class="btn btn-info" type="button" onclick="window.location=('sign_up.jsp')">注 册</button>

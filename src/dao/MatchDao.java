@@ -75,9 +75,14 @@ public class MatchDao
 
     public void delmatch(int id) //删除比赛
     {
-        String sql="DELETE FROM match_info WHERE id=?";
+        String sql;
         try
         {
+            sql="DELETE FROM match_info WHERE id=?";
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1,id);
+            pstmt.executeUpdate();
+            sql="DELETE FROM user_match WHERE id=?";
             pstmt=conn.prepareStatement(sql);
             pstmt.setInt(1,id);
             pstmt.executeUpdate();

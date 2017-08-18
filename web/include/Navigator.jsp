@@ -32,7 +32,7 @@
                 <% } else { %>
                 <li ><a href="logoutservlet" class="glyphicon glyphicon-log-out" >登出</a></li>
                 <p class="navbar-text navbar-right">
-                    Hello! <%=(String)request.getSession().getAttribute("username")%>
+                    Hello! <%=(String)request.getSession().getAttribute("name")%>
                 </p>
                 <% } %>
 

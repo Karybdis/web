@@ -1,6 +1,7 @@
 package servlet;
 
 import dao.UserDao;
+import javafx.scene.control.TableView;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,26 +17,26 @@ public class Loginservlet extends HttpServlet
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         String who=request.getParameter("who");
-
         UserDao my=new UserDao();
         String result=my.checkuser(username,password,who);
         if (result.equals("AllCorrect"))
         {
+            String name=new UserDao().username_name(username,who);
             request.getSession().setAttribute("username",username);
+            request.getSession().setAttribute("name",name);
             request.getSession().setAttribute("who",who);
-            System.out.println("登录成功");
             response.sendRedirect("home.jsp");
             // request.getRequestDispatcher("index.jsp").forward(request,response);
         }
         else if (result.equals("PasswordIsWrong"))
         {
-            response.sendRedirect("login.jsp");
-            System.out.println("密码错误");
+            request.setAttribute("answer","PasswordIsWrong");
+            request.getRequestDispatcher("login.jsp").forward(request,response);
         }
         else if (result.equals("UsernameIsWrong"))
         {
-            response.sendRedirect("login.jsp");
-            System.out.println("没有该用户");
+            request.setAttribute("answer","UsernameIsWrong");
+            request.getRequestDispatcher("login.jsp").forward(request,response);
         }
     }
     @Override

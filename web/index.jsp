@@ -11,7 +11,7 @@
   <title>$Title$</title>
 </head>
 <body>
- 欢迎 <%=(String)request.getSession().getAttribute("username")%>
+<p>不要重复报名！</p>
 <br/>
 </body>
 </html>

@@ -18,8 +18,8 @@ public class UserEnterservlet extends HttpServlet
     {
         String[] usernames=request.getParameterValues("username");
         int id=Integer.parseInt(request.getParameter("id"));
-        new UserDao().enteruser(usernames,id);
-        response.sendRedirect("home.jsp");
+        if (new UserDao().enteruser(usernames,id)==0) response.sendRedirect("index.jsp");
+        else response.sendRedirect("home.jsp");
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
