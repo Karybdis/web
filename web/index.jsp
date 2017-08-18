@@ -11,7 +11,7 @@
   <title>$Title$</title>
 </head>
 <body>
-<p>不要重复报名！</p>
+<p>队伍中有人已参赛，不要重复报名！</p>
 <br/>
 </body>
 </html>

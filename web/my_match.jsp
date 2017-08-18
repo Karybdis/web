@@ -26,7 +26,7 @@
                 <td>${match.start_time}</td>
                 <td>${match.stop_time}</td>
                 <c:if test="${match.leader==1}">
-                    <td><a href="delmymatchservlet?username=<%=(String)request.getSession().getAttribute("username")%>&id=${match.id}">
+                    <td><a href="delmymatchservlet?username=<%=(String)request.getSession().getAttribute("username")%>&id=${match.id}&who=0">
                         <span class="glyphicon glyphicon-remove"></span></a></td>
                 </c:if>
             </tr>

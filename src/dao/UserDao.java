@@ -131,7 +131,7 @@ public class UserDao
         close();
     }
 
-    public void deluser_match(String username,int id)
+    public void deluser_match(String username,int id)   ///删除用户与报名的比赛
     {
         String sql="DELETE FROM user_match WHERE leader_name=? AND id=?";
         try
@@ -206,7 +206,7 @@ public class UserDao
         return 1;
     }
 
-    public  ArrayList<Match> my_match(String username)
+    public  ArrayList<Match> my_match(String username)  //查找我所报名的比赛
     {
         ArrayList<Match> matchs=new ArrayList<Match>();
         String sql="SELECT * FROM user_match WHERE username=?";

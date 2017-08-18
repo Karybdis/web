@@ -1,11 +1,13 @@
 package dao;
 
 import bean.Match;
+import bean.Team;
 import com.sun.scenario.animation.AbstractMasterTimer;
 import jdk.nashorn.internal.ir.CatchNode;
 import org.w3c.dom.ls.LSException;
 
 import java.sql.*;
+import java.time.temporal.TemporalAdjuster;
 import java.util.ArrayList;
 
 public class MatchDao
@@ -18,7 +20,7 @@ public class MatchDao
     // static final String password="zjcx1997";
     private Connection conn=null;
     private Statement stmt=null;
-    private PreparedStatement pstmt=null;
+    private PreparedStatement pstmt=null,pstmt2=null;
     private ResultSet rs=null;
     public MatchDao()
     {
@@ -167,5 +169,40 @@ public class MatchDao
         }
         close();
         return matchs;
+    }
+
+    public ArrayList<Team> match_team(int id)
+    {
+        String sql="SELECT * FROM user_match WHERE id=?";
+        ArrayList<Team> teams=new ArrayList<>();
+        ResultSet rs2=null;
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1,id);
+            rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                Team team=new Team();
+                if (rs.getInt("leader")==1)
+                {
+                    team.setLeader_name(rs.getString("leader_name"));
+                    team.setId(id);
+                    sql="SELECT name FROM user_match WHERE id=? AND leader_name=?";
+                    pstmt=conn.prepareStatement(sql);
+                    pstmt.setInt(1,id);
+                    pstmt.setString(2,team.getLeader_name());
+                    rs2=pstmt.executeQuery();
+                    while (rs2.next())
+                        team.names.add(rs2.getString("name"));
+                    teams.add(team);
+                }
+            }
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+        return teams;
     }
 }

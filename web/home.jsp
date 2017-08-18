@@ -21,6 +21,7 @@
             <% if ("1".equals(b)) { %>
             <th>编辑</th>
             <th>删除</th>
+            <th>已报名</th>
             <% }  else if ("0".equals(b)) { %>
             <th>报名</th>
             <% } %>
@@ -39,6 +40,9 @@
                 </a></td>
                 <td><a href="matchdelservlet?id=${match.id}">
                     <span class="glyphicon glyphicon-trash"></span>
+                </a></td>
+                <td><a href="matchteamservlet?id=${match.id}">
+                    <span class="glyphicon glyphicon-list-alt"></span>
                 </a></td>
                 <% } else if ("0".equals(b))  { %>
                 <td>  <a href="matchenterservlet?id=${match.id}">
