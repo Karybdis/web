@@ -40,6 +40,12 @@
                     <input type="text" class="form-control" name="email"/>
                 </div>
             </div>
+            <div class="form-group ">
+                <label class="col-lg-5 control-label" >电 话</label>
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" name="phone"/>
+                </div>
+            </div>
             <div class="form-group" align="center">
                 <input type="submit" class="btn btn-info" value="确定" />
             </div>

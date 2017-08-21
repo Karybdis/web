@@ -111,9 +111,9 @@ public class UserDao
         return name;
     }
 
-    public void adduser(String username,String password,String name ,int sex,String email)  //添加用户
+    public void adduser(String username,String password,String name ,int sex,String email,String phone)  //添加用户
     {
-        String sql="INSERT INTO user_login VALUE (?,?,?,?,?)";
+        String sql="INSERT INTO user_login VALUE (?,?,?,?,?,?)";
         try
         {
             pstmt=conn.prepareStatement(sql);
@@ -122,6 +122,7 @@ public class UserDao
             pstmt.setString(3,name);
             pstmt.setInt(4,sex);
             pstmt.setString(5,email);
+            pstmt.setString(6,phone);
             pstmt.executeUpdate();
         }
         catch (SQLException se)

@@ -17,7 +17,7 @@ public class ModifyPasswordservlet extends HttpServlet
         String password=request.getParameter("password");
         String username=request.getParameter("username");
         new UserDao().modify_password(ex_password,password,username);
-        response.sendRedirect("home.jsp");
+        response.sendRedirect("matchretrieveservlet");
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException

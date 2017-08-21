@@ -25,7 +25,7 @@ public class Loginservlet extends HttpServlet
             request.getSession().setAttribute("username",username);
             request.getSession().setAttribute("name",name);
             request.getSession().setAttribute("who",who);
-            response.sendRedirect("home.jsp");
+            response.sendRedirect("matchretrieveservlet");
             // request.getRequestDispatcher("index.jsp").forward(request,response);
         }
         else if (result.equals("PasswordIsWrong"))

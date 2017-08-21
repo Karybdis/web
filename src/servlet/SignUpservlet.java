@@ -18,8 +18,9 @@ public class SignUpservlet extends HttpServlet
         String name=request.getParameter("name");
         int sex=Integer.parseInt(request.getParameter("sex"));
         String email=request.getParameter("email");
+        String phone=request.getParameter("phone");
         UserDao my=new UserDao();
-        my.adduser(username,password,name,sex,email);
+        my.adduser(username,password,name,sex,email,phone);
         response.sendRedirect("login.jsp");
     }
     @Override

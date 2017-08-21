@@ -54,7 +54,6 @@
         </tbody>
     </table>
 </div>
-<a href="matchretrieveservlet"><button type="button" class="btn btn-default">查询比赛</button></a>
 <% if ("1".equals(b)) { %>
 <div class="panel panel-success">
     <div class="panel-heading">新增比赛</div>

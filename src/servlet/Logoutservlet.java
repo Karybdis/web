@@ -13,7 +13,7 @@ public class Logoutservlet extends HttpServlet
     {
         request.getSession().removeAttribute("username");
         request.getSession().removeAttribute("who");
-        response.sendRedirect("home.jsp");
+        response.sendRedirect("matchretrieveservlet");
     }
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException

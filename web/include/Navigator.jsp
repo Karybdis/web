@@ -25,7 +25,7 @@
         </div>
         <div>
             <ul class="nav navbar-nav">
-                <li ><a href="home.jsp" class="glyphicon glyphicon-home">主页</a></li>
+                <li ><a href="matchretrieveservlet" class="glyphicon glyphicon-home">主页</a></li>
                 <% String a=(String)request.getSession().getAttribute("username");
                     if (a==null) { %>
                 <li ><a href="login.jsp" class="glyphicon glyphicon-log-in">登录/注册</a></li>
