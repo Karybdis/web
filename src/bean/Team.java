@@ -8,6 +8,7 @@ public class Team
     private String leader_name;
     public ArrayList<String> names=new ArrayList<>();
     private int id;
+    private int teammate_num;
 
     public String getLeader_name()
     {
@@ -37,5 +38,15 @@ public class Team
     public void setId(int id)
     {
         this.id = id;
+    }
+
+    public int getTeammate_num()
+    {
+        return teammate_num;
+    }
+
+    public void setTeammate_num(int teammate_num)
+    {
+        this.teammate_num = teammate_num;
     }
 }

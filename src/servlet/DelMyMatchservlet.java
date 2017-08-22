@@ -18,9 +18,9 @@ public class DelMyMatchservlet extends HttpServlet
         String who=request.getParameter("who");
         new UserDao().deluser_match(username,id);
         if ("0".equals(who))
-        request.getRequestDispatcher("mymatchservlet?username"+username).forward(request,response);
+        request.getRequestDispatcher("mymatchservlet?username="+username).forward(request,response);
         else if ("1".equals(who))
-            request.getRequestDispatcher("matchteamservlet?id"+id).forward(request,response);
+            request.getRequestDispatcher("matchteamservlet?id="+id).forward(request,response);
     }
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException

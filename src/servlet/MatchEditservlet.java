@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by sunsc on 2017/8/12.
- */
+
 public class MatchEditservlet extends HttpServlet
 {
     @Override

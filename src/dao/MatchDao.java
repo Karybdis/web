@@ -4,8 +4,14 @@ import bean.Match;
 import bean.Team;
 import com.sun.scenario.animation.AbstractMasterTimer;
 import jdk.nashorn.internal.ir.CatchNode;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.*;
 import org.w3c.dom.ls.LSException;
-
+import javax.servlet.http.Cookie;
+import java.io.FileOutputStream;
+import java.net.ResponseCache;
 import java.sql.*;
 import java.time.temporal.TemporalAdjuster;
 import java.util.ArrayList;
@@ -20,8 +26,10 @@ public class MatchDao
     // static final String password="zjcx1997";
     private Connection conn=null;
     private Statement stmt=null;
-    private PreparedStatement pstmt=null,pstmt2=null;
+    private PreparedStatement pstmt=null;
     private ResultSet rs=null;
+
+
     public MatchDao()
     {
         try
@@ -171,7 +179,7 @@ public class MatchDao
         return matchs;
     }
 
-    public ArrayList<Team> match_team(int id)
+    public ArrayList<Team> match_team(int id)  //列出报名该比赛的队伍
     {
         String sql="SELECT * FROM user_match WHERE id=?";
         ArrayList<Team> teams=new ArrayList<>();
@@ -195,6 +203,12 @@ public class MatchDao
                     rs2=pstmt.executeQuery();
                     while (rs2.next())
                         team.names.add(rs2.getString("name"));
+                    sql="SELECT teammate_num FROM match_info WHERE id=?";
+                    pstmt= conn.prepareStatement(sql);
+                    pstmt.setInt(1,id);
+                    rs2=pstmt.executeQuery();
+                    while(rs2.next())
+                        team.setTeammate_num(rs2.getInt("teammate_num"));
                     teams.add(team);
                 }
             }
@@ -204,5 +218,75 @@ public class MatchDao
             se.printStackTrace();
         }
         return teams;
+    }
+
+    public void team_print(int id,int teammate_num)  //导出excel
+    {
+        String outputFile="D:\\match"+id+".xlsx";
+        String sql="SELECT * FROM user_match WHERE id=?";
+        ResultSet rs2=null;
+        try
+        {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,id);
+            rs=pstmt.executeQuery();
+            XSSFWorkbook workbook=new XSSFWorkbook();
+            XSSFSheet sheet=workbook.createSheet("队伍");
+            XSSFRow row=sheet.createRow(0);
+            row.setHeight((short)500);
+            XSSFCell cell=row.createCell(0);
+            cell.setCellValue("队长学号");
+            cell=row.createCell(1);
+            cell.setCellValue("队伍成员");
+            cell=row.createCell(2);
+            cell.setCellValue("成员学号");
+            cell=row.createCell(3);
+            cell.setCellValue("联系方式");
+            cell=row.createCell(4);
+            cell.setCellValue("邮箱");
+            for (int i=0;i<5;i++)
+                sheet.setColumnWidth(i,5300);
+            int i=1;
+            while (rs.next())
+            {
+                row=sheet.createRow(i);
+                row.setHeight((short)500);
+                cell=row.createCell(0);
+                cell.setCellValue(rs.getString("leader_name"));
+                cell=row.createCell(1);
+                cell.setCellValue(rs.getString("name"));
+                cell=row.createCell(2);
+                cell.setCellValue(rs.getString("username"));
+                sql="SELECT * FROM user_login WHERE username=?";
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1,rs.getString("username"));
+                rs2=pstmt.executeQuery();
+                while (rs2.next())
+                {
+                    cell = row.createCell(3);
+                    cell.setCellValue(rs2.getString("phone"));
+                    cell = row.createCell(4);
+                    cell.setCellValue(rs2.getString("email"));
+                }
+                i++;
+            }
+            if (teammate_num!=1)
+            {
+                int j=1;
+                while (j<i)
+                {
+                    sheet.addMergedRegion(new CellRangeAddress(j, j + teammate_num - 1, 0, 0));
+                    j += teammate_num;
+                }
+            }
+            FileOutputStream out = new FileOutputStream(outputFile);
+            workbook.write(out);
+            out.flush();
+            out.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }

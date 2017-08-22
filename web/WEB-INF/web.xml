@@ -118,4 +118,12 @@
         <servlet-name>matchteamservlet</servlet-name>
         <url-pattern>/matchteamservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>teamprintservlet</servlet-name>
+        <servlet-class>servlet.TeamPrintservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>teamprintservlet</servlet-name>
+        <url-pattern>/teamprintservlet</url-pattern>
+    </servlet-mapping>
 </web-app>
