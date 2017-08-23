@@ -11,6 +11,7 @@ import org.apache.poi.xssf.usermodel.*;
 import org.w3c.dom.ls.LSException;
 import javax.servlet.http.Cookie;
 import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.net.ResponseCache;
 import java.sql.*;
 import java.time.temporal.TemporalAdjuster;
@@ -152,7 +153,6 @@ public class MatchDao
         close();
     }
 
-
     public ArrayList<Match> retrieve()  //主页显示比赛
     {
         ArrayList<Match> matchs=new ArrayList<Match>();
@@ -220,9 +220,8 @@ public class MatchDao
         return teams;
     }
 
-    public void team_print(int id,int teammate_num)  //导出excel
+    public void team_print(int id, int teammate_num,OutputStream out)  //导出excel
     {
-        String outputFile="D:\\match"+id+".xlsx";
         String sql="SELECT * FROM user_match WHERE id=?";
         ResultSet rs2=null;
         try
@@ -279,7 +278,6 @@ public class MatchDao
                     j += teammate_num;
                 }
             }
-            FileOutputStream out = new FileOutputStream(outputFile);
             workbook.write(out);
             out.flush();
             out.close();
