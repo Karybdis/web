@@ -11,6 +11,7 @@ import java.security.cert.CertPathParameters;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Stream;
 
 public class UserDao
 {
@@ -277,6 +278,45 @@ public class UserDao
             se.printStackTrace();
         }
         close();
+    }
+
+    public void reset_password(String username)
+    {
+        String sql="UPDATE user_login SET password=? WHERE username=?";
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,"123456");
+            pstmt.setString(2,username);
+            pstmt.executeUpdate();
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+    }
+
+    public ArrayList<User> retrieve_user()
+    {
+        ArrayList<User> users=new ArrayList<User>();
+        String sql="SELECT username,name FROM user_login";
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            rs=pstmt.executeQuery();
+            while (rs.next())
+            {
+                User user=new User();
+                user.setUsername(rs.getString("username"));
+                user.setName(rs.getString("name"));
+                users.add(user);
+            }
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+        return users;
     }
 }
 

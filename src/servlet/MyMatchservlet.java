@@ -22,6 +22,7 @@ public class MyMatchservlet extends HttpServlet
         request.setAttribute("matchs",matchs);
         request.getRequestDispatcher("my_match.jsp").forward(request,response);
     }
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {

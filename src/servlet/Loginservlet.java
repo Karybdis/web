@@ -39,6 +39,7 @@ public class Loginservlet extends HttpServlet
             request.getRequestDispatcher("login.jsp").forward(request,response);
         }
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

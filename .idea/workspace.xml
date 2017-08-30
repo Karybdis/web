@@ -7,14 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c551dda-41d7-4e03-91e5-c4fbff6fbfd2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/download.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/webtest_war_exploded/webtest_war exploded.war" afterPath="$PROJECT_DIR$/out/artifacts/webtest_war_exploded/webtest_war exploded.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/dao/MatchDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/dao/MatchDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/dao/UserDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/TeamPrintservlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/TeamPrintservlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/MatchAddservlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/MatchAddservlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/MatchDao.java" afterPath="$PROJECT_DIR$/src/dao/MatchDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/DelMyMatchservlet.java" afterPath="$PROJECT_DIR$/src/servlet/DelMyMatchservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/Loginservlet.java" afterPath="$PROJECT_DIR$/src/servlet/Loginservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/Logoutservlet.java" afterPath="$PROJECT_DIR$/src/servlet/Logoutservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/MatchAddservlet.java" afterPath="$PROJECT_DIR$/src/servlet/MatchAddservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/MatchDelservlet.java" afterPath="$PROJECT_DIR$/src/servlet/MatchDelservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/MatchEnterservlet.java" afterPath="$PROJECT_DIR$/src/servlet/MatchEnterservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/MatchTeamservlet.java" afterPath="$PROJECT_DIR$/src/servlet/MatchTeamservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/ModifyPasswordservlet.java" afterPath="$PROJECT_DIR$/src/servlet/ModifyPasswordservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/MyMatchservlet.java" afterPath="$PROJECT_DIR$/src/servlet/MyMatchservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/SignUpservlet.java" afterPath="$PROJECT_DIR$/src/servlet/SignUpservlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/TeamPrintservlet.java" afterPath="$PROJECT_DIR$/src/servlet/TeamPrintservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/UserEnterservlet.java" afterPath="$PROJECT_DIR$/src/servlet/UserEnterservlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/include/Navigator.jsp" afterPath="$PROJECT_DIR$/web/include/Navigator.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,129 +39,110 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MatchDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/MatchDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1551">
-              <caret line="282" column="24" lean-forward="false" selection-start-line="282" selection-start-column="12" selection-end-line="282" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1503451768205" expanded="true" signature="1934:1979" ph="INSERT INTO match_info... " />
-                <marker date="1503451768205" expanded="true" signature="2524:2557" ph="DELETE FROM " />
-                <marker date="1503451768205" expanded="true" signature="2690:2723" ph="DELETE FROM " />
-                <marker date="1503451768205" expanded="true" signature="3028:3063" ph="SELECT * FRO... match_info" />
-                <marker date="1503451768205" expanded="true" signature="3954:4053" ph="UPDATE match... " />
-                <marker date="1503451768205" expanded="true" signature="4735:4759" ph="SELECT id,ma... match_info" />
-                <marker date="1503451768205" expanded="true" signature="5433:5468" ph="SELECT * FRO... user_match" />
-                <marker date="1503451768205" expanded="true" signature="5959:5997" ph="SELECT * FRO... user_match" />
-                <marker date="1503451768205" expanded="true" signature="5959:6015" ph="SELECT name user_match" />
-                <marker date="1503451768205" expanded="true" signature="6347:6393" ph="SELECT teamm... match_info" />
-                <marker date="1503451768205" expanded="true" signature="6950:6985" ph="SELECT * FRO... user_match" />
-                <marker date="1503451768205" expanded="true" signature="8281:8321" ph="SELECT * FRO... user_login" />
-                <marker date="1503451768205" expanded="true" signature="8281:8322" ph="SELECT * FRO... user_login" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamPrintservlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/TeamPrintservlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="256" column="63" lean-forward="true" selection-start-line="256" selection-start-column="63" selection-end-line="256" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1503407917198" expanded="true" signature="1735:1776" ph="SELECT usern... user_login" />
-                <marker date="1503407917198" expanded="true" signature="1819:1861" ph="SELECT usern... admin_login" />
-                <marker date="1503407917198" expanded="true" signature="2685:2729" ph="SELECT name user_login" />
-                <marker date="1503407917198" expanded="true" signature="2750:2795" ph="SELECT name admin" />
-                <marker date="1503407917198" expanded="true" signature="3332:3374" ph="INSERT INTO user_login... " />
-                <marker date="1503407917198" expanded="true" signature="3924:3975" ph="DELETE FROM " />
-                <marker date="1503407917198" expanded="true" signature="4407:4449" ph="INSERT INTO user_match... " />
-                <marker date="1503407917198" expanded="true" signature="5032:5075" ph="SELECT usern... user_match" />
-                <marker date="1503407917198" expanded="true" signature="5532:5573" ph="SELECT * FRO... user_login" />
-                <marker date="1503407917198" expanded="true" signature="6273:6314" ph="SELECT * FRO... user_match" />
-                <marker date="1503407917198" expanded="true" signature="6726:6763" ph="SELECT * FRO... match_info" />
-                <marker date="1503407917198" expanded="true" signature="7806:7847" ph="SELECT * FRO... user_login" />
-                <marker date="1503407917198" expanded="true" signature="8148:8179" ph="UPDATE user_... " />
-                <marker date="1503407917198" expanded="true" signature="8148:8180" ph="UPDATE user_... " />
-                <marker date="1503407917198" expanded="true" signature="8148:8197" ph="UPDATE user_... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelMyMatchservlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/DelMyMatchservlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Loginservlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/Loginservlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logoutservlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/Logoutservlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchAddservlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/MatchAddservlet.java">
+      <file leaf-file-name="UserRetrieveservlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/UserRetrieveservlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="26" column="83" lean-forward="false" selection-start-line="26" selection-start-column="83" selection-end-line="26" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchDelservlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/MatchDelservlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchEditservlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/MatchEditservlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModifyPasswordservlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/ModifyPasswordservlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResetPasswordservlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/ResetPasswordservlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/UserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="290" column="34" lean-forward="false" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#9085#9091#0" expanded="true" />
+                <marker date="1504101670171" expanded="true" signature="1767:1808" ph="SELECT usern... user_login" />
+                <marker date="1504101670171" expanded="true" signature="1851:1893" ph="SELECT usern... admin_login" />
+                <marker date="1504101670171" expanded="true" signature="2717:2761" ph="SELECT name user_login" />
+                <marker date="1504101670171" expanded="true" signature="2782:2827" ph="SELECT name admin" />
+                <marker date="1504101670171" expanded="true" signature="3364:3406" ph="INSERT INTO user_login... " />
+                <marker date="1504101670171" expanded="true" signature="3956:4007" ph="DELETE FROM " />
+                <marker date="1504101670171" expanded="true" signature="4439:4481" ph="INSERT INTO user_match... " />
+                <marker date="1504101670171" expanded="true" signature="5064:5107" ph="SELECT usern... user_match" />
+                <marker date="1504101670171" expanded="true" signature="5564:5605" ph="SELECT * FRO... user_login" />
+                <marker date="1504101670171" expanded="true" signature="6305:6346" ph="SELECT * FRO... user_match" />
+                <marker date="1504101670171" expanded="true" signature="6758:6795" ph="SELECT * FRO... match_info" />
+                <marker date="1504101670171" expanded="true" signature="7838:7879" ph="SELECT * FRO... user_login" />
+                <marker date="1504101670171" expanded="true" signature="8180:8211" ph="UPDATE user_... " />
+                <marker date="1504101670171" expanded="true" signature="8180:8212" ph="UPDATE user_... " />
+                <marker date="1504101670171" expanded="true" signature="8180:8229" ph="UPDATE user_... " />
+                <marker date="1504101670171" expanded="true" signature="8653:8675" ph="UPDATE user_... " />
+                <marker date="1504101670171" expanded="true" signature="8653:8702" ph="UPDATE user_... " />
+                <marker date="1504101670171" expanded="true" signature="9115:9147" ph="SELECT usern... user_l" />
+                <marker date="1504101670171" expanded="true" signature="9115:9151" ph="SELECT usern... user_login" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sign_up.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/sign_up.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/user.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bean/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding>
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#232#233#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,8 +151,18 @@
       <file leaf-file-name="UserEnterservlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/UserEnterservlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="59" />
+            <state relative-caret-position="275">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="133" column="41" lean-forward="false" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -193,6 +193,7 @@
       <find>pstmt2</find>
       <find>User</find>
       <find />
+      <find>re</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,10 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/match.jsp" />
-        <option value="$PROJECT_DIR$/web/lo_gin.html" />
-        <option value="$PROJECT_DIR$/src/web/mysql.java" />
-        <option value="$PROJECT_DIR$/src/web/MatchAddservlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/mysql.java" />
         <option value="$PROJECT_DIR$/src/dao/MatchAdd.java" />
         <option value="$PROJECT_DIR$/src/dao/mysql.java" />
@@ -218,14 +215,10 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/include/Header.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/include/Navigator.jsp" />
         <option value="$PROJECT_DIR$/web/Navigator.jsp" />
-        <option value="$PROJECT_DIR$/src/servlet/MatchEnterservlet.java" />
         <option value="$PROJECT_DIR$/src/bean/User.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/my_match.jsp" />
         <option value="$PROJECT_DIR$/web/include/Footer.jsp" />
-        <option value="$PROJECT_DIR$/src/servlet/MyMatchservlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/MatchDelservlet.java" />
         <option value="$PROJECT_DIR$/web/match_info.jsp" />
-        <option value="$PROJECT_DIR$/src/servlet/MatchAddservlet.java" />
         <option value="$PROJECT_DIR$/src/bean/Match.java" />
         <option value="$PROJECT_DIR$/web/information.jsp" />
         <option value="$PROJECT_DIR$/src/servlet/MatchUpdateservlet.java" />
@@ -235,28 +228,36 @@
         <option value="$PROJECT_DIR$/src/bean/team.java" />
         <option value="$PROJECT_DIR$/web/modify_pass.jsp" />
         <option value="$PROJECT_DIR$/src/bean/Name.java" />
-        <option value="$PROJECT_DIR$/src/servlet/MatchTeamservlet.java" />
         <option value="$PROJECT_DIR$/web/my_match.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/sign_up.jsp" />
-        <option value="$PROJECT_DIR$/web/include/Navigator.jsp" />
-        <option value="$PROJECT_DIR$/src/servlet/ModifyPasswordservlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/Logoutservlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/Loginservlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/SignUpservlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/UserEnterservlet.java" />
         <option value="$PROJECT_DIR$/web/home.jsp" />
         <option value="$PROJECT_DIR$/web/match_enter.jsp" />
         <option value="$PROJECT_DIR$/src/poitest.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/servlet/DelMyMatchservlet.java" />
         <option value="$PROJECT_DIR$/src/bean/Team.java" />
         <option value="$PROJECT_DIR$/web/match_team.jsp" />
         <option value="$PROJECT_DIR$/src/servlet/MatchEditservlet.java" />
-        <option value="$PROJECT_DIR$/src/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/download.java" />
         <option value="$PROJECT_DIR$/src/dao/MatchDao.java" />
+        <option value="$PROJECT_DIR$/web/include/Navigator.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/user.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/servlet/UserEnterservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/SignUpservlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/TeamPrintservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/ResetPasswordservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/ModifyPasswordservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/MyMatchservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/MatchTeamservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/MatchEnterservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/DelMyMatchservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/MatchAddservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/Loginservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/Logoutservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/MatchDelservlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/UserRetrieveservlet.java" />
+        <option value="$PROJECT_DIR$/src/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/web/user.jsp" />
       </list>
     </option>
   </component>
@@ -306,8 +307,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -341,6 +342,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1143,12 +1180,16 @@
       <workItem from="1503386339100" duration="5450000" />
       <workItem from="1503394414866" duration="1383000" />
       <workItem from="1503407078070" duration="2211000" />
-      <workItem from="1503448277145" duration="3162000" />
+      <workItem from="1503448277145" duration="3506000" />
+      <workItem from="1503563179156" duration="45000" />
+      <workItem from="1503816811758" duration="474000" />
+      <workItem from="1503925995556" duration="365000" />
+      <workItem from="1504099084109" duration="2867000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236264000" />
+    <option name="totallyTimeSpent" value="240359000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1160,7 +1201,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1174,7 +1215,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23895809" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.222103" sideWeight="0.4801812" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23497854" sideWeight="0.4801812" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31330472" sideWeight="0.5198188" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1232,16 +1273,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/classes/web/Loginservlet.class" />
-    <entry file="file://$PROJECT_DIR$/web/match.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/dao/MatchAdd.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/classes/servlet/MatchAddservlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean.java" />
     <entry file="jar://D:/Apache Software Foundation/Tomcat 7.0/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1274,25 +1305,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/Name.java" />
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/include/Footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/include/Navigator.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1304,94 +1320,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poitest.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="113" column="53" lean-forward="true" selection-start-line="113" selection-start-column="53" selection-end-line="113" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/match_edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/match_enter.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/Match.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#314#315#0" expanded="false" />
-            <element signature="e#347#348#0" expanded="false" />
-            <element signature="e#403#404#0" expanded="false" />
-            <element signature="e#447#448#0" expanded="false" />
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#521#522#0" expanded="false" />
-            <element signature="e#577#578#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="false" />
-            <element signature="e#693#694#0" expanded="false" />
-            <element signature="e#747#748#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#819#820#0" expanded="false" />
-            <element signature="e#844#845#0" expanded="false" />
-            <element signature="e#881#882#0" expanded="false" />
-            <element signature="e#909#910#0" expanded="false" />
-            <element signature="e#949#950#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1041#1042#0" expanded="false" />
-            <element signature="e#1089#1090#0" expanded="false" />
-            <element signature="e#1123#1124#0" expanded="false" />
-            <element signature="e#1152#1153#0" expanded="false" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1233#1234#0" expanded="false" />
-            <element signature="e#1275#1276#0" expanded="false" />
-            <element signature="e#1309#1310#0" expanded="false" />
-            <element signature="e#1367#1368#0" expanded="false" />
-            <element signature="e#1413#1414#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/sign_up.jsp">
+    <entry file="file://$PROJECT_DIR$/src/bean/Team.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="49" column="57" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="192">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/home.jsp">
+    <entry file="file://$PROJECT_DIR$/src/download.java" />
+    <entry file="file://$PROJECT_DIR$/web/modify_pass.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1968">
-          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/information.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1344">
-          <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+        <state relative-caret-position="576">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1404,181 +1351,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/modify_pass.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/match_team.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#201#202#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/download.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="114" lean-forward="false" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MatchEnterservlet.java">
+    <entry file="file://$PROJECT_DIR$/web/include/Navigator.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MatchRetrieveservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MatchUpdateservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/ModifyPasswordservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/SignUpservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MyMatchservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MatchTeamservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/DelMyMatchservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/Loginservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/Logoutservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MatchAddservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="26" column="83" lean-forward="false" selection-start-line="26" selection-start-column="83" selection-end-line="26" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MatchDelservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/MatchEditservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/UserEnterservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/TeamPrintservlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+          <caret line="34" column="49" lean-forward="false" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/MatchDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1551">
-          <caret line="282" column="24" lean-forward="false" selection-start-line="282" selection-start-column="12" selection-end-line="282" selection-end-column="24" />
+        <state relative-caret-position="-131">
+          <caret line="139" column="26" lean-forward="false" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1503451768205" expanded="true" signature="1934:1979" ph="INSERT INTO match_info... " />
@@ -1598,28 +1382,274 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="256" column="63" lean-forward="true" selection-start-line="256" selection-start-column="63" selection-end-line="256" selection-end-column="63" />
+        <state relative-caret-position="240">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/information.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/match_edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/match_enter.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/match_team.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/TeamPrintservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MyMatchservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MatchEnterservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/DelMyMatchservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/Loginservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MatchAddservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/Logoutservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1503407917198" expanded="true" signature="1735:1776" ph="SELECT usern... user_login" />
-            <marker date="1503407917198" expanded="true" signature="1819:1861" ph="SELECT usern... admin_login" />
-            <marker date="1503407917198" expanded="true" signature="2685:2729" ph="SELECT name user_login" />
-            <marker date="1503407917198" expanded="true" signature="2750:2795" ph="SELECT name admin" />
-            <marker date="1503407917198" expanded="true" signature="3332:3374" ph="INSERT INTO user_login... " />
-            <marker date="1503407917198" expanded="true" signature="3924:3975" ph="DELETE FROM " />
-            <marker date="1503407917198" expanded="true" signature="4407:4449" ph="INSERT INTO user_match... " />
-            <marker date="1503407917198" expanded="true" signature="5032:5075" ph="SELECT usern... user_match" />
-            <marker date="1503407917198" expanded="true" signature="5532:5573" ph="SELECT * FRO... user_login" />
-            <marker date="1503407917198" expanded="true" signature="6273:6314" ph="SELECT * FRO... user_match" />
-            <marker date="1503407917198" expanded="true" signature="6726:6763" ph="SELECT * FRO... match_info" />
-            <marker date="1503407917198" expanded="true" signature="7806:7847" ph="SELECT * FRO... user_login" />
-            <marker date="1503407917198" expanded="true" signature="8148:8179" ph="UPDATE user_... " />
-            <marker date="1503407917198" expanded="true" signature="8148:8180" ph="UPDATE user_... " />
-            <marker date="1503407917198" expanded="true" signature="8148:8197" ph="UPDATE user_... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MatchEditservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MatchDelservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MatchTeamservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MatchUpdateservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MatchRetrieveservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/SignUpservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/UserRetrieveservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sign_up.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/UserEnterservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="133" column="41" lean-forward="false" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/ModifyPasswordservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/ResetPasswordservlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="290" column="34" lean-forward="false" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9085#9091#0" expanded="true" />
+            <marker date="1504101670171" expanded="true" signature="1767:1808" ph="SELECT usern... user_login" />
+            <marker date="1504101670171" expanded="true" signature="1851:1893" ph="SELECT usern... admin_login" />
+            <marker date="1504101670171" expanded="true" signature="2717:2761" ph="SELECT name user_login" />
+            <marker date="1504101670171" expanded="true" signature="2782:2827" ph="SELECT name admin" />
+            <marker date="1504101670171" expanded="true" signature="3364:3406" ph="INSERT INTO user_login... " />
+            <marker date="1504101670171" expanded="true" signature="3956:4007" ph="DELETE FROM " />
+            <marker date="1504101670171" expanded="true" signature="4439:4481" ph="INSERT INTO user_match... " />
+            <marker date="1504101670171" expanded="true" signature="5064:5107" ph="SELECT usern... user_match" />
+            <marker date="1504101670171" expanded="true" signature="5564:5605" ph="SELECT * FRO... user_login" />
+            <marker date="1504101670171" expanded="true" signature="6305:6346" ph="SELECT * FRO... user_match" />
+            <marker date="1504101670171" expanded="true" signature="6758:6795" ph="SELECT * FRO... match_info" />
+            <marker date="1504101670171" expanded="true" signature="7838:7879" ph="SELECT * FRO... user_login" />
+            <marker date="1504101670171" expanded="true" signature="8180:8211" ph="UPDATE user_... " />
+            <marker date="1504101670171" expanded="true" signature="8180:8212" ph="UPDATE user_... " />
+            <marker date="1504101670171" expanded="true" signature="8180:8229" ph="UPDATE user_... " />
+            <marker date="1504101670171" expanded="true" signature="8653:8675" ph="UPDATE user_... " />
+            <marker date="1504101670171" expanded="true" signature="8653:8702" ph="UPDATE user_... " />
+            <marker date="1504101670171" expanded="true" signature="9115:9147" ph="SELECT usern... user_l" />
+            <marker date="1504101670171" expanded="true" signature="9115:9151" ph="SELECT usern... user_login" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>

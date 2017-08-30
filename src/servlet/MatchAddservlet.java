@@ -23,6 +23,7 @@ public class MatchAddservlet extends HttpServlet
         new MatchDao().addmatch(match_name,start_time,stop_time,teammate_num,information);
         request.getRequestDispatcher("matchretrieveservlet").forward(request,response);
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

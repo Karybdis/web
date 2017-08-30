@@ -23,6 +23,7 @@ public class SignUpservlet extends HttpServlet
         my.adduser(username,password,name,sex,email,phone);
         response.sendRedirect("login.jsp");
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

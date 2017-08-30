@@ -22,6 +22,7 @@ public class DelMyMatchservlet extends HttpServlet
         else if ("1".equals(who))
             request.getRequestDispatcher("matchteamservlet?id="+id).forward(request,response);
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

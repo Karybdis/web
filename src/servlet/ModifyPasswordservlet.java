@@ -19,6 +19,7 @@ public class ModifyPasswordservlet extends HttpServlet
         new UserDao().modify_password(ex_password,password,username);
         response.sendRedirect("matchretrieveservlet");
     }
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {

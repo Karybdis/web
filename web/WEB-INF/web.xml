@@ -126,4 +126,20 @@
         <servlet-name>teamprintservlet</servlet-name>
         <url-pattern>/teamprintservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>userretrieveservlet</servlet-name>
+        <servlet-class>servlet.UserRetrieveservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userretrieveservlet</servlet-name>
+        <url-pattern>/userretrieveservlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>resetpasswordservlett</servlet-name>
+        <servlet-class>servlet.ResetPasswordservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>resetpasswordservlett</servlet-name>
+        <url-pattern>/resetpasswordservlett</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -21,6 +21,7 @@ public class UserEnterservlet extends HttpServlet
         if (new UserDao().enteruser(usernames,id)==0) response.sendRedirect("index.jsp");
         else response.sendRedirect("matchretrieveservlet");
     }
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {

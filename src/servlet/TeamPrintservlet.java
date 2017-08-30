@@ -25,6 +25,7 @@ public class TeamPrintservlet  extends HttpServlet
         response.setContentType("application/msexcel;charset=UTF-8");
         new MatchDao().team_print(id,teammate_num,out);
     }
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {

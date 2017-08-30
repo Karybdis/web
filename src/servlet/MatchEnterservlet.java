@@ -19,6 +19,7 @@ public class MatchEnterservlet extends HttpServlet
         request.setAttribute("match",match);
         request.getRequestDispatcher("match_enter.jsp").forward(request,response);
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

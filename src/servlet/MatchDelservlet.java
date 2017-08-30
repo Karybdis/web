@@ -17,6 +17,7 @@ public class MatchDelservlet extends HttpServlet
         new MatchDao().delmatch(id);
         request.getRequestDispatcher("matchretrieveservlet").forward(request,response);
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

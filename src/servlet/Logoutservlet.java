@@ -15,6 +15,7 @@ public class Logoutservlet extends HttpServlet
         request.getSession().removeAttribute("who");
         response.sendRedirect("matchretrieveservlet");
     }
+
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {

@@ -30,15 +30,18 @@
                     if (a==null) { %>
                 <li ><a href="login.jsp" class="glyphicon glyphicon-log-in">登录/注册</a></li>
                 <% } else { %>
+                <%  String b=(String)request.getSession().getAttribute("who");
+                    if ("1".equals(b)) {%>
+                <li ><a href="userretrieveservlet" class="glyphicon glyphicon-user">用户</a></li>
+                <% } %>
                 <li ><a href="logoutservlet" class="glyphicon glyphicon-log-out" >登出</a></li>
+
                 <p class="navbar-text navbar-right">
                     Hello! <%=(String)request.getSession().getAttribute("name")%>
                 </p>
                 <% } %>
-
-
             </ul>
-            <%  String b=(String)request.getSession().getAttribute("who");
+            <% String b=(String)request.getSession().getAttribute("who");
                 if ("0".equals(b)) {%>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
