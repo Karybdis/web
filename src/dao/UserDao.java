@@ -2,16 +2,8 @@ package dao;
 
 import bean.Match;
 import bean.User;
-import sun.print.PSStreamPrintService;
-import javax.jws.soap.SOAPBinding;
-import javax.servlet.http.Cookie;
-import javax.xml.ws.Response;
-import java.net.ResponseCache;
-import java.security.cert.CertPathParameters;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.stream.Stream;
 
 public class UserDao
 {
@@ -25,6 +17,7 @@ public class UserDao
     private Statement stmt=null;
     private PreparedStatement pstmt=null;
     private ResultSet rs=null;
+
     public UserDao()
     {
         try
@@ -280,7 +273,7 @@ public class UserDao
         close();
     }
 
-    public void reset_password(String username)
+    public void reset_password(String username)     //管理员重置密码
     {
         String sql="UPDATE user_login SET password=? WHERE username=?";
         try
@@ -296,7 +289,7 @@ public class UserDao
         }
     }
 
-    public ArrayList<User> retrieve_user()
+    public ArrayList<User> retrieve_user()      //管理员查看用户名单
     {
         ArrayList<User> users=new ArrayList<User>();
         String sql="SELECT username,name FROM user_login";

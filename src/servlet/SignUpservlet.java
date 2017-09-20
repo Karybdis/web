@@ -1,6 +1,7 @@
 package servlet;
 
 import dao.UserDao;
+import other.Mail;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +22,7 @@ public class SignUpservlet extends HttpServlet
         String phone=request.getParameter("phone");
         UserDao my=new UserDao();
         my.adduser(username,password,name,sex,email,phone);
+        new Mail().sendmail(email);
         response.sendRedirect("login.jsp");
     }
 
