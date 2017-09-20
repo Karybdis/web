@@ -54,6 +54,7 @@
                 <button class="btn btn-info" type="submit" onclick="r()">登 录</button>
                 <button class="btn btn-info" type="button" onclick="window.location=('sign_up.jsp')">注 册</button>
                 <button class="btn btn-info" type="reset">清 空</button>
+                <button class="btn btn-primary" type="button" onclick="window.location=('forget_pass.jsp')">忘记密码?</button>
             </div>
         </form>
     </div>

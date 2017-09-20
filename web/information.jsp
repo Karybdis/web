@@ -6,6 +6,7 @@
 </head>
 <body>
 <p><%=request.getParameter("information")%></p>
+
 <%@ include file="./include/Footer.jsp" %>
 </body>
 </html>

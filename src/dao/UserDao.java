@@ -289,6 +289,28 @@ public class UserDao
         }
     }
 
+    public User forget_password(String username)
+    {
+        String sql="SELECT * FROM user_login WHERE username=?";
+        User user=new User();
+        try
+        {
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,username);
+            rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+            }
+        }
+        catch (SQLException se)
+        {
+            se.printStackTrace();
+        }
+        return user;
+    }
+
     public ArrayList<User> retrieve_user()      //管理员查看用户名单
     {
         ArrayList<User> users=new ArrayList<User>();
