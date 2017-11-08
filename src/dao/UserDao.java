@@ -80,7 +80,8 @@ public class UserDao
         close();
         return "UsernameIsWrong";
     }
-
+//hibernate
+    //spring
     public String username_name(String username,String who)  //找到学号对应的名字
     {
         String sql;

@@ -17,9 +17,19 @@ public class MatchTeamservlet extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {
         int id=Integer.parseInt(request.getParameter("id"));
-        ArrayList<Team> teams=new MatchDao().match_team(id);
-        request.setAttribute("teams",teams);
-        request.getRequestDispatcher("match_team.jsp").forward(request,response);
+        if ("1".equals(request.getSession().getAttribute("who")))
+        {
+            ArrayList<Team> teams = new MatchDao().match_team(id);
+            request.setAttribute("teams", teams);
+
+            request.getRequestDispatcher("match_team.jsp").forward(request, response);
+
+        }
+
+        else
+        {
+            response.sendRedirect("matchretrieveservlet");
+        }
     }
 
     @Override
