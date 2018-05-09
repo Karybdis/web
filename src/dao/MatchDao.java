@@ -14,7 +14,7 @@ public class MatchDao
     static final String db_url="jdbc:mysql://106.14.223.207:3306/mysql";
     //static final String db_url="jdbc:mysql://192.168.99.100:3306/mysql";
     static final String user="root";
-    static final String password="zjcx1997@ssc.COM";
+    static final String password="XXXXXXXXXXX";
     // static final String password="zjcx1997";
     private Connection conn=null;
     private Statement stmt=null;
